@@ -141,3 +141,6 @@ frame_progress = 0.8464178
 [node name="col_sonic" type="CollisionShape2D" parent="." unique_id=1105309239]
 position = Vector2(158.25, 123.5)
 shape = SubResource("RectangleShape2D_cv737")
+
+[node name="cam_sonic" type="Camera2D" parent="." unique_id=851205220]
+zoom = Vector2(2, 2)
