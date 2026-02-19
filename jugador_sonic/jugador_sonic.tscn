@@ -125,12 +125,19 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cv737"]
+size = Vector2(26.5, 35)
+
 [node name="jugador_sonic" type="CharacterBody2D" unique_id=1633354352]
+position = Vector2(5, 17)
 
 [node name="ani_sonic" type="AnimatedSprite2D" parent="." unique_id=1022603970]
-position = Vector2(156, 124)
+position = Vector2(156.25, 122.5)
+scale = Vector2(1.0128205, 1.0178572)
 sprite_frames = SubResource("SpriteFrames_ppn3f")
-animation = &"correr_rapido"
-frame_progress = 0.656739
+animation = &"reposo"
+frame_progress = 0.8464178
 
 [node name="col_sonic" type="CollisionShape2D" parent="." unique_id=1105309239]
+position = Vector2(158.25, 123.5)
+shape = SubResource("RectangleShape2D_cv737")
