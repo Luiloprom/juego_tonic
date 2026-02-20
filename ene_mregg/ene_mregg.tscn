@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cibx1pkv4wy5e"]
+
+[node name="ene_mregg" type="CharacterBody2D" unique_id=1330691166]
+
+[node name="ani_mregg" type="AnimatedSprite2D" parent="." unique_id=1392963193]
+
+[node name="col_mregg" type="CollisionShape2D" parent="." unique_id=700487693]
