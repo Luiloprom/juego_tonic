@@ -132,11 +132,11 @@ size = Vector2(26.5, 35)
 position = Vector2(5, 17)
 
 [node name="ani_sonic" type="AnimatedSprite2D" parent="." unique_id=1022603970]
-position = Vector2(156.25, 122.5)
+position = Vector2(156, 123)
 scale = Vector2(1.0128205, 1.0178572)
 sprite_frames = SubResource("SpriteFrames_ppn3f")
-animation = &"reposo"
-frame_progress = 0.8464178
+animation = &"correr"
+frame_progress = 0.79010814
 
 [node name="col_sonic" type="CollisionShape2D" parent="." unique_id=1105309239]
 position = Vector2(158.25, 123.5)

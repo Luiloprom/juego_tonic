@@ -1,7 +1,82 @@
 [gd_scene format=3 uid="uid://cibx1pkv4wy5e"]
 
+[ext_resource type="Texture2D" uid="uid://dmf4dtq1fdr08" path="res://ene_mregg/img/Custom _ Edited - Sonic the Hedgehog Customs - Dr. Eggman - Dr. Eggman.png" id="1_qx5xq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mawm4"]
+atlas = ExtResource("1_qx5xq")
+region = Rect2(17, 401, 57, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hest1"]
+atlas = ExtResource("1_qx5xq")
+region = Rect2(75, 401, 75, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_clvjf"]
+atlas = ExtResource("1_qx5xq")
+region = Rect2(151, 401, 75, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sp03r"]
+atlas = ExtResource("1_qx5xq")
+region = Rect2(227, 401, 68, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jp3xp"]
+atlas = ExtResource("1_qx5xq")
+region = Rect2(296, 401, 56, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ndwnw"]
+atlas = ExtResource("1_qx5xq")
+region = Rect2(354, 400, 64, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wg45n"]
+atlas = ExtResource("1_qx5xq")
+region = Rect2(420, 398, 76, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gwyre"]
+atlas = ExtResource("1_qx5xq")
+region = Rect2(497, 397, 62, 55)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k4i06"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mawm4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hest1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_clvjf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sp03r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jp3xp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ndwnw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wg45n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gwyre")
+}],
+"loop": true,
+"name": &"correr_saltando",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5knsl"]
+size = Vector2(57, 50)
+
 [node name="ene_mregg" type="CharacterBody2D" unique_id=1330691166]
+position = Vector2(279, 225)
 
 [node name="ani_mregg" type="AnimatedSprite2D" parent="." unique_id=1392963193]
+sprite_frames = SubResource("SpriteFrames_k4i06")
+animation = &"correr_saltando"
+frame_progress = 0.14219417
 
 [node name="col_mregg" type="CollisionShape2D" parent="." unique_id=700487693]
+position = Vector2(-0.5, 1)
+shape = SubResource("RectangleShape2D_5knsl")
