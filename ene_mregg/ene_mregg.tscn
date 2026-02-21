@@ -75,7 +75,7 @@ position = Vector2(279, 225)
 [node name="ani_mregg" type="AnimatedSprite2D" parent="." unique_id=1392963193]
 sprite_frames = SubResource("SpriteFrames_k4i06")
 animation = &"correr_saltando"
-frame_progress = 0.14219417
+frame_progress = 0.4611559
 
 [node name="col_mregg" type="CollisionShape2D" parent="." unique_id=700487693]
 position = Vector2(-0.5, 1)
