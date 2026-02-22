@@ -1,84 +1,70 @@
 [gd_scene format=3 uid="uid://c4c0omgua73kv"]
 
-[ext_resource type="Texture2D" uid="uid://dorm4d80gh5k" path="res://jugador_sonic/img/sonic_x___sonic_custom_sprites_by_facundogomez_de5l2rb.png" id="1_cv737"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cv737"]
-atlas = ExtResource("1_cv737")
-region = Rect2(6, 159, 39, 55)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_oiobb"]
-atlas = ExtResource("1_cv737")
-region = Rect2(45, 159, 39, 55)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ppn3f"]
-atlas = ExtResource("1_cv737")
-region = Rect2(84, 159, 39, 55)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6sqcc"]
-atlas = ExtResource("1_cv737")
-region = Rect2(129, 159, 40, 55)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gh2es"]
-atlas = ExtResource("1_cv737")
-region = Rect2(169, 159, 40, 55)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qvxel"]
-atlas = ExtResource("1_cv737")
-region = Rect2(335, 159, 40, 55)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ls4xn"]
-atlas = ExtResource("1_cv737")
-region = Rect2(375, 159, 40, 55)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2ooqm"]
-atlas = ExtResource("1_cv737")
-region = Rect2(415, 159, 40, 55)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lp3hi"]
-atlas = ExtResource("1_cv737")
-region = Rect2(455, 159, 40, 55)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ybqvv"]
-atlas = ExtResource("1_cv737")
-region = Rect2(131, 39, 39, 56)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kcmn1"]
-atlas = ExtResource("1_cv737")
-region = Rect2(170, 39, 39, 56)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rd7gf"]
-atlas = ExtResource("1_cv737")
-region = Rect2(209, 39, 39, 56)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3nnki"]
-atlas = ExtResource("1_cv737")
-region = Rect2(248, 39, 39, 56)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_crbcu"]
-atlas = ExtResource("1_cv737")
-region = Rect2(287, 39, 39, 56)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2oi26"]
-atlas = ExtResource("1_cv737")
-region = Rect2(326, 39, 39, 56)
+[ext_resource type="Script" uid="uid://dwc7h8q38dspf" path="res://jugador_sonic/jugador_sonic.gd" id="1_ugu3f"]
+[ext_resource type="Texture2D" uid="uid://dftobcho18iov" path="res://jugador_sonic/img/correr/1.png" id="2_hyd0q"]
+[ext_resource type="Texture2D" uid="uid://cq8gpkbdibnio" path="res://jugador_sonic/img/correr/2.png" id="3_285p5"]
+[ext_resource type="Texture2D" uid="uid://dy8fcg3bwsmaj" path="res://jugador_sonic/img/correr/3.png" id="4_6y0u5"]
+[ext_resource type="Texture2D" uid="uid://d02a7hwp2mnlo" path="res://jugador_sonic/img/correr/4.png" id="5_l7h4c"]
+[ext_resource type="Texture2D" uid="uid://0uq28u1rkakq" path="res://jugador_sonic/img/correr/5.png" id="6_hyqcw"]
+[ext_resource type="Texture2D" uid="uid://daugktnnblk0m" path="res://jugador_sonic/img/correr/6.png" id="7_6nbb6"]
+[ext_resource type="Texture2D" uid="uid://bq086rbj7rl4j" path="res://jugador_sonic/img/correr/7.png" id="8_usnce"]
+[ext_resource type="Texture2D" uid="uid://hwqv7k7blp4c" path="res://jugador_sonic/img/correr/8.png" id="9_u43np"]
+[ext_resource type="Texture2D" uid="uid://drohnpqeka56" path="res://jugador_sonic/img/correr_rapido/1.png" id="10_3lfmm"]
+[ext_resource type="Texture2D" uid="uid://dmil78xylqgn3" path="res://jugador_sonic/img/correr_rapido/2.png" id="11_i1xhl"]
+[ext_resource type="Texture2D" uid="uid://yyqbe4otyga3" path="res://jugador_sonic/img/correr_rapido/3.png" id="12_d5gge"]
+[ext_resource type="Texture2D" uid="uid://cgxmf8cmxuhyj" path="res://jugador_sonic/img/correr_rapido/4.png" id="13_aqlm6"]
+[ext_resource type="Texture2D" uid="uid://crbngy08exwp2" path="res://jugador_sonic/img/morir/1.png" id="14_kyoay"]
+[ext_resource type="Texture2D" uid="uid://dsp6eo45g026q" path="res://jugador_sonic/img/morir/2.png" id="15_8r8eq"]
+[ext_resource type="Texture2D" uid="uid://benw5uqccyyx1" path="res://jugador_sonic/img/morir/3.png" id="16_bg3ee"]
+[ext_resource type="Texture2D" uid="uid://cysjfqjmjb7vo" path="res://jugador_sonic/img/morir/4.png" id="17_ch27l"]
+[ext_resource type="Texture2D" uid="uid://rad8dycbra8x" path="res://jugador_sonic/img/reposo/1.png" id="18_pjrvn"]
+[ext_resource type="Texture2D" uid="uid://4i02wona3mt6" path="res://jugador_sonic/img/reposo/2.png" id="19_04861"]
+[ext_resource type="Texture2D" uid="uid://bakwfb2qfoent" path="res://jugador_sonic/img/reposo/3.png" id="20_b6ij3"]
+[ext_resource type="Texture2D" uid="uid://b5vbd5mbjx2t6" path="res://jugador_sonic/img/reposo/4.png" id="21_11cty"]
+[ext_resource type="Texture2D" uid="uid://5jr576bna5p3" path="res://jugador_sonic/img/reposo/5.png" id="22_6t8pk"]
+[ext_resource type="Texture2D" uid="uid://41vmeyevvvhx" path="res://jugador_sonic/img/reposo/6.png" id="23_e1lrp"]
+[ext_resource type="Texture2D" uid="uid://dp8k44rksgsgl" path="res://jugador_sonic/img/reposo/7.png" id="24_ytr7o"]
+[ext_resource type="Texture2D" uid="uid://clg4jc5b8vjp" path="res://jugador_sonic/img/reposo/8.png" id="25_ycgdm"]
+[ext_resource type="Texture2D" uid="uid://byqawufaaa4rl" path="res://jugador_sonic/img/reposo/9.png" id="26_bsadl"]
+[ext_resource type="Texture2D" uid="uid://ck6lrqm2wd162" path="res://jugador_sonic/img/reposo/10.png" id="27_jw7rg"]
+[ext_resource type="Texture2D" uid="uid://blfvu2xvu5rf8" path="res://jugador_sonic/img/saltar/1.png" id="28_hmkuv"]
+[ext_resource type="Texture2D" uid="uid://cx7oqhxaciqcr" path="res://jugador_sonic/img/saltar/2.png" id="29_r4mi2"]
+[ext_resource type="Texture2D" uid="uid://c2x5rabbt7t5x" path="res://jugador_sonic/img/saltar/3.png" id="30_svx23"]
+[ext_resource type="Texture2D" uid="uid://dp4s7kmpisd0a" path="res://jugador_sonic/img/saltar/4.png" id="31_1ug27"]
+[ext_resource type="Texture2D" uid="uid://bdr4qk7ark2qo" path="res://jugador_sonic/img/victoria/1.png" id="32_50thl"]
+[ext_resource type="Texture2D" uid="uid://ht4hmoelkvx5" path="res://jugador_sonic/img/victoria/2.png" id="33_kyoc1"]
+[ext_resource type="Texture2D" uid="uid://04it4gq1ge3s" path="res://jugador_sonic/img/victoria/3.png" id="34_wlb73"]
+[ext_resource type="Texture2D" uid="uid://da1epuy3h82mx" path="res://jugador_sonic/img/victoria/4.png" id="35_j3ufw"]
+[ext_resource type="Texture2D" uid="uid://cyi745a4g2rr7" path="res://jugador_sonic/img/victoria/5.png" id="36_lavj7"]
+[ext_resource type="Texture2D" uid="uid://bq4k1iykoua54" path="res://jugador_sonic/img/victoria/6.png" id="37_rpd7k"]
+[ext_resource type="Texture2D" uid="uid://cm4bdqqt43u1e" path="res://jugador_sonic/img/victoria/7.png" id="38_gdvi3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ppn3f"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_cv737")
+"texture": ExtResource("2_hyd0q")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_oiobb")
+"texture": ExtResource("3_285p5")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ppn3f")
+"texture": ExtResource("4_6y0u5")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6sqcc")
+"texture": ExtResource("5_l7h4c")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gh2es")
+"texture": ExtResource("6_hyqcw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_6nbb6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_usnce")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_u43np")
 }],
 "loop": true,
 "name": &"correr",
@@ -86,16 +72,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qvxel")
+"texture": ExtResource("10_3lfmm")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ls4xn")
+"texture": ExtResource("11_i1xhl")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2ooqm")
+"texture": ExtResource("12_d5gge")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_lp3hi")
+"texture": ExtResource("13_aqlm6")
 }],
 "loop": true,
 "name": &"correr_rapido",
@@ -103,43 +89,117 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ybqvv")
+"texture": ExtResource("14_kyoay")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_kcmn1")
+"texture": ExtResource("15_8r8eq")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rd7gf")
+"texture": ExtResource("16_bg3ee")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3nnki")
+"texture": ExtResource("17_ch27l")
+}],
+"loop": true,
+"name": &"morir",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_pjrvn")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_crbcu")
+"texture": ExtResource("19_04861")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2oi26")
+"texture": ExtResource("20_b6ij3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_11cty")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_6t8pk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_e1lrp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_ytr7o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_ycgdm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_bsadl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_jw7rg")
 }],
 "loop": true,
 "name": &"reposo",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("28_hmkuv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_r4mi2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_svx23")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_1ug27")
+}],
+"loop": true,
+"name": &"saltar",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("32_50thl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_kyoc1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_wlb73")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_j3ufw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_lavj7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_rpd7k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_gdvi3")
+}],
+"loop": true,
+"name": &"victoria",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cv737"]
-size = Vector2(26.5, 35)
+size = Vector2(23, 40)
 
 [node name="jugador_sonic" type="CharacterBody2D" unique_id=1633354352]
 position = Vector2(5, 17)
+script = ExtResource("1_ugu3f")
 
 [node name="ani_sonic" type="AnimatedSprite2D" parent="." unique_id=1022603970]
 position = Vector2(156, 123)
 scale = Vector2(1.0128205, 1.0178572)
 sprite_frames = SubResource("SpriteFrames_ppn3f")
-animation = &"correr"
-frame_progress = 0.79010814
+animation = &"reposo"
+frame = 4
+frame_progress = 0.074175395
 
 [node name="col_sonic" type="CollisionShape2D" parent="." unique_id=1105309239]
-position = Vector2(158.25, 123.5)
+position = Vector2(155.5, 123)
 shape = SubResource("RectangleShape2D_cv737")
 
 [node name="cam_sonic" type="Camera2D" parent="." unique_id=851205220]

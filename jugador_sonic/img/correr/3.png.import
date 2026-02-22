@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dorm4d80gh5k"
-path="res://.godot/imported/sonic_x___sonic_custom_sprites_by_facundogomez_de5l2rb.png-2f4d42e60d7363d566e950eedef6bbf5.ctex"
+uid="uid://dy8fcg3bwsmaj"
+path="res://.godot/imported/3.png-5e4530ebb7427d49bda86fba6345f3d8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://jugador_sonic/img/sonic_x___sonic_custom_sprites_by_facundogomez_de5l2rb.png"
-dest_files=["res://.godot/imported/sonic_x___sonic_custom_sprites_by_facundogomez_de5l2rb.png-2f4d42e60d7363d566e950eedef6bbf5.ctex"]
+source_file="res://jugador_sonic/img/correr/3.png"
+dest_files=["res://.godot/imported/3.png-5e4530ebb7427d49bda86fba6345f3d8.ctex"]
 
 [params]
 
