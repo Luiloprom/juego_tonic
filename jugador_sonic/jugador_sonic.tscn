@@ -13,15 +13,16 @@
 [ext_resource type="Texture2D" uid="uid://dmil78xylqgn3" path="res://jugador_sonic/img/correr_rapido/2.png" id="11_i1xhl"]
 [ext_resource type="Texture2D" uid="uid://yyqbe4otyga3" path="res://jugador_sonic/img/correr_rapido/3.png" id="12_d5gge"]
 [ext_resource type="Texture2D" uid="uid://cgxmf8cmxuhyj" path="res://jugador_sonic/img/correr_rapido/4.png" id="13_aqlm6"]
-[ext_resource type="Texture2D" uid="uid://crbngy08exwp2" path="res://jugador_sonic/img/morir/1.png" id="14_kyoay"]
+[ext_resource type="Texture2D" uid="uid://d0ua6i66uatd4" path="res://jugador_sonic/img/morir/1.png" id="14_kyoay"]
 [ext_resource type="Texture2D" uid="uid://b3bsjuh2uv64i" path="res://jugador_sonic/img/deslizar/1.png" id="14_l7h4c"]
-[ext_resource type="Texture2D" uid="uid://dsp6eo45g026q" path="res://jugador_sonic/img/morir/2.png" id="15_8r8eq"]
+[ext_resource type="Texture2D" uid="uid://dknjtxhqynpd6" path="res://jugador_sonic/img/morir/2.png" id="15_8r8eq"]
 [ext_resource type="Texture2D" uid="uid://cdk08bs73d12o" path="res://jugador_sonic/img/deslizar/2.png" id="15_hyqcw"]
 [ext_resource type="Texture2D" uid="uid://ex7q3ol6ju62" path="res://jugador_sonic/img/deslizar/3.png" id="16_6nbb6"]
-[ext_resource type="Texture2D" uid="uid://benw5uqccyyx1" path="res://jugador_sonic/img/morir/3.png" id="16_bg3ee"]
-[ext_resource type="Texture2D" uid="uid://cysjfqjmjb7vo" path="res://jugador_sonic/img/morir/4.png" id="17_ch27l"]
+[ext_resource type="Texture2D" uid="uid://rtoxwb043o5" path="res://jugador_sonic/img/morir/3.png" id="16_bg3ee"]
+[ext_resource type="Texture2D" uid="uid://s5v4ptfr60ma" path="res://jugador_sonic/img/morir/4.png" id="17_ch27l"]
 [ext_resource type="Texture2D" uid="uid://fftm554gu7ef" path="res://jugador_sonic/img/deslizar/4.png" id="17_usnce"]
 [ext_resource type="Texture2D" uid="uid://rad8dycbra8x" path="res://jugador_sonic/img/reposo/1.png" id="18_pjrvn"]
+[ext_resource type="Texture2D" uid="uid://j006jngbjpld" path="res://jugador_sonic/img/deslizar/5.png" id="18_u43np"]
 [ext_resource type="Texture2D" uid="uid://4i02wona3mt6" path="res://jugador_sonic/img/reposo/2.png" id="19_04861"]
 [ext_resource type="Texture2D" uid="uid://bakwfb2qfoent" path="res://jugador_sonic/img/reposo/3.png" id="20_b6ij3"]
 [ext_resource type="Texture2D" uid="uid://b5vbd5mbjx2t6" path="res://jugador_sonic/img/reposo/4.png" id="21_11cty"]
@@ -105,6 +106,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("17_usnce")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_u43np")
 }],
 "loop": true,
 "name": &"deslizar",
@@ -219,7 +223,8 @@ metadata/_edit_group_ = true
 position = Vector2(156, 123)
 scale = Vector2(1.0128205, 1.0178572)
 sprite_frames = SubResource("SpriteFrames_ppn3f")
-animation = &"reposo"
+animation = &"deslizar"
+frame_progress = 0.7963992
 
 [node name="col_sonic" type="CollisionShape2D" parent="." unique_id=1105309239]
 position = Vector2(155, 122)
@@ -233,7 +238,6 @@ limit_bottom = 648
 limit_smoothed = true
 
 [node name="tiempo" type="Timer" parent="." unique_id=450369254]
-wait_time = 3.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=759067599]
 

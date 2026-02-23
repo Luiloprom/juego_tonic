@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dgh5aj45746mm"]
+
+[ext_resource type="Texture2D" uid="uid://dbgwtmvoqp5jq" path="res://fondo/img/Fondo.png" id="1_1hu1m"]
+
+[node name="fondo" type="ParallaxBackground" unique_id=167779352]
+
+[node name="layer_fondo" type="ParallaxLayer" parent="." unique_id=939643948]
+motion_scale = Vector2(0.1, 1)
+motion_mirroring = Vector2(1152, 0)
+
+[node name="spr_fondo" type="Sprite2D" parent="layer_fondo" unique_id=106597178]
+position = Vector2(576.00006, 379.8096)
+scale = Vector2(4.8, 3.3523798)
+texture = ExtResource("1_1hu1m")

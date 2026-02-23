@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0ua6i66uatd4"
-path="res://.godot/imported/1.png-89af8c465b7761937df3f03a42c4aaf5.ctex"
+uid="uid://bphlqq1rgrcq2"
+path="res://.godot/imported/6.png-0975c346d7d35c99f0f0b9908690d35d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://jugador_sonic/img/morir/1.png"
-dest_files=["res://.godot/imported/1.png-89af8c465b7761937df3f03a42c4aaf5.ctex"]
+source_file="res://jugador_sonic/img/deslizar/6.png"
+dest_files=["res://.godot/imported/6.png-0975c346d7d35c99f0f0b9908690d35d.ctex"]
 
 [params]
 
