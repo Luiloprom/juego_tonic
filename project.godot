@@ -21,7 +21,9 @@ folder_colors={
 "res://ene_mregg/": "red",
 "res://jugador_sonic/": "green",
 "res://pinchos/": "red",
-"res://menu/": "blue"
+"res://menu/": "blue",
+"res://environment/": "blue",
+"res://jugador_sonic/": "green"
 }
 
 [input]

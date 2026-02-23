@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cauxljfahuudh"]
+
+[ext_resource type="PackedScene" uid="uid://b86ffpelod8ei" path="res://environment/floor.tscn" id="1_8a1ph"]
+[ext_resource type="PackedScene" uid="uid://c4c0omgua73kv" path="res://jugador_sonic/jugador_sonic.tscn" id="2_wjl7u"]
+
+[node name="Environment" type="Node2D" unique_id=476322563]
+
+[node name="Floor" parent="." unique_id=417109721 instance=ExtResource("1_8a1ph")]
+
+[node name="jugador_sonic" parent="." unique_id=1633354352 instance=ExtResource("2_wjl7u")]
+position = Vector2(187, 365)
