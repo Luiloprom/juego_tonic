@@ -19,10 +19,11 @@ config/icon="res://icon.svg"
 
 folder_colors={
 "res://ene_mregg/": "red",
-"res://environment/": "blue",
 "res://jugador_sonic/": "green",
+"res://pinchos/": "red",
 "res://menu/": "blue",
-"res://pinchos/": "red"
+"res://environment/": "blue",
+"res://jugador_sonic/": "green"
 }
 
 [input]
