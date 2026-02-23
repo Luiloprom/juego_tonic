@@ -43,10 +43,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5knsl"]
-size = Vector2(37, 43)
+size = Vector2(37, 46)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gwyre"]
-size = Vector2(43, 49)
+size = Vector2(63, 50)
 
 [node name="ene_mregg" type="CharacterBody2D" unique_id=1330691166]
 position = Vector2(279, 225)
@@ -58,17 +58,19 @@ animation = &"correr"
 frame = 2
 
 [node name="col_mregg" type="CollisionShape2D" parent="." unique_id=700487693]
-position = Vector2(5.5, -1.5)
+position = Vector2(5.5, 0)
 shape = SubResource("RectangleShape2D_5knsl")
 
 [node name="ene_area" type="Area2D" parent="." unique_id=470860651]
 
 [node name="col_mregg_ataque" type="CollisionShape2D" parent="ene_area" unique_id=1472830962]
-position = Vector2(5.5, -1.5)
+position = Vector2(-1.5, -1)
 shape = SubResource("RectangleShape2D_gwyre")
 
 [node name="detectorIzquierdo" type="RayCast2D" parent="." unique_id=1470321439]
-position = Vector2(27, -4)
+position = Vector2(31, -3)
 
 [node name="detectorDerecho" type="RayCast2D" parent="." unique_id=1851868880]
-position = Vector2(-16, -5)
+position = Vector2(-34, -5)
+
+[connection signal="body_entered" from="ene_area" to="." method="_on_ene_area_body_entered"]

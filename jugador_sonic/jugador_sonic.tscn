@@ -204,11 +204,12 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cv737"]
-size = Vector2(23, 40)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l7h4c"]
+radius = 11.0
+height = 40.0
 
 [node name="jugador_sonic" type="CharacterBody2D" unique_id=1633354352]
-position = Vector2(5, 17)
+position = Vector2(14, 21)
 script = ExtResource("1_ugu3f")
 metadata/_edit_group_ = true
 
@@ -219,8 +220,8 @@ sprite_frames = SubResource("SpriteFrames_ppn3f")
 animation = &"reposo"
 
 [node name="col_sonic" type="CollisionShape2D" parent="." unique_id=1105309239]
-position = Vector2(155.5, 123)
-shape = SubResource("RectangleShape2D_cv737")
+position = Vector2(155, 122)
+shape = SubResource("CapsuleShape2D_l7h4c")
 
 [node name="cam_sonic" type="Camera2D" parent="." unique_id=851205220]
 zoom = Vector2(1.5, 1.5)
