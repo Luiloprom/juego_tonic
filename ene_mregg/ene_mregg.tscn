@@ -43,10 +43,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5knsl"]
-size = Vector2(37, 46)
+size = Vector2(37, 44)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gwyre"]
-size = Vector2(63, 50)
+size = Vector2(63, 46)
 
 [node name="ene_mregg" type="CharacterBody2D" unique_id=1330691166]
 position = Vector2(279, 225)
@@ -58,13 +58,13 @@ animation = &"correr"
 frame = 2
 
 [node name="col_mregg" type="CollisionShape2D" parent="." unique_id=700487693]
-position = Vector2(5.5, 0)
+position = Vector2(5.5, 1)
 shape = SubResource("RectangleShape2D_5knsl")
 
 [node name="ene_area" type="Area2D" parent="." unique_id=470860651]
 
 [node name="col_mregg_ataque" type="CollisionShape2D" parent="ene_area" unique_id=1472830962]
-position = Vector2(-1.5, -1)
+position = Vector2(-1.5, 1)
 shape = SubResource("RectangleShape2D_gwyre")
 
 [node name="detectorIzquierdo" type="RayCast2D" parent="." unique_id=1470321439]

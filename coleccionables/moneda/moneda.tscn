@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://drghu44a4nakf" path="res://coleccionables/moneda/moneda.gd" id="1_flhnw"]
 [ext_resource type="Texture2D" uid="uid://dqaqg6p0d8e7b" path="res://coleccionables/moneda/img/monedas.png" id="1_tcphm"]
-[ext_resource type="AudioStream" uid="uid://crr75mfr0ptyd" path="res://coleccionables/moneda/moneda.mp3" id="2_vj4lu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vj4lu"]
 atlas = ExtResource("1_tcphm")
@@ -82,5 +81,4 @@ frame_progress = 0.2175362
 [node name="col_moneda" type="CollisionShape2D" parent="." unique_id=2142448110]
 shape = SubResource("CircleShape2D_s3qf8")
 
-[node name="audio_moneda" type="AudioStreamPlayer2D" parent="." unique_id=1060033000]
-stream = ExtResource("2_vj4lu")
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -42,6 +42,8 @@
 [ext_resource type="Texture2D" uid="uid://cyi745a4g2rr7" path="res://jugador_sonic/img/victoria/5.png" id="36_lavj7"]
 [ext_resource type="Texture2D" uid="uid://bq4k1iykoua54" path="res://jugador_sonic/img/victoria/6.png" id="37_rpd7k"]
 [ext_resource type="Texture2D" uid="uid://cm4bdqqt43u1e" path="res://jugador_sonic/img/victoria/7.png" id="38_gdvi3"]
+[ext_resource type="PackedScene" uid="uid://dl3h6sbfxhjjc" path="res://contador/contador.tscn" id="43_hyqcw"]
+[ext_resource type="AudioStream" uid="uid://crr75mfr0ptyd" path="res://coleccionables/moneda/moneda.mp3" id="44_6nbb6"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ppn3f"]
 animations = [{
@@ -209,7 +211,7 @@ radius = 11.0
 height = 40.0
 
 [node name="jugador_sonic" type="CharacterBody2D" unique_id=1633354352]
-position = Vector2(14, 21)
+position = Vector2(-112, 500)
 script = ExtResource("1_ugu3f")
 metadata/_edit_group_ = true
 
@@ -224,6 +226,7 @@ position = Vector2(155, 122)
 shape = SubResource("CapsuleShape2D_l7h4c")
 
 [node name="cam_sonic" type="Camera2D" parent="." unique_id=851205220]
+position = Vector2(-23, 406)
 zoom = Vector2(1.5, 1.5)
 limit_left = 0
 limit_bottom = 648
@@ -231,3 +234,11 @@ limit_smoothed = true
 
 [node name="tiempo" type="Timer" parent="." unique_id=450369254]
 wait_time = 3.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=759067599]
+
+[node name="Contador" parent="CanvasLayer" unique_id=1321579784 instance=ExtResource("43_hyqcw")]
+
+[node name="audio_moneda" type="AudioStreamPlayer2D" parent="." unique_id=1931927626]
+position = Vector2(-14, -21)
+stream = ExtResource("44_6nbb6")

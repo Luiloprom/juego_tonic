@@ -63,8 +63,9 @@ func _physics_process(delta: float) -> void:
 	apply_friction(input_axis, delta)
 	handle_jump()
 	handle_air_acceleration(input_axis, delta)
-	update_animation(input_axis)
+	set_floor_max_angle(deg_to_rad(60))
 	move_and_slide()
+	update_animation(input_axis)
 
 func morir():
 	set_physics_process(false)
@@ -74,4 +75,20 @@ func morir():
 	get_tree().change_scene_to_file("res://menu/menu.tscn")
 	
 func _ready() -> void:
+	floor_snap_length = 4.0
 	add_to_group("jugadores")
+	contador.actualizar(0)
+	
+	
+# Referencia al contador
+@onready var contador: Control = $CanvasLayer/Contador
+
+# Contador de monedas
+var monedas: int = 0
+
+
+# Agrega una moneda al contador del jugador
+func add_moneda():
+	$audio_moneda.play()
+	monedas+=1
+	contador.actualizar(monedas)

@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://b2o10gkhccq13"]
+[gd_scene format=3 uid="uid://dl3h6sbfxhjjc"]
 
 [ext_resource type="FontFile" uid="uid://jxwm8qd4g5nf" path="res://menu/NiseSegaSonic.TTF" id="1_e6ans"]
 [ext_resource type="Script" uid="uid://bhk1jv0adffe3" path="res://contador/contador.gd" id="1_ii7h0"]
@@ -69,7 +69,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [node name="Contador" type="Control" unique_id=1321579784]

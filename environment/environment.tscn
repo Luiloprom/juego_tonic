@@ -13,11 +13,24 @@
 [node name="jugador_sonic" parent="." unique_id=1633354352 instance=ExtResource("2_wjl7u")]
 position = Vector2(-123, 374)
 
-[node name="pinchos" parent="." unique_id=481562610 instance=ExtResource("3_wjl7u")]
+[node name="monedas" type="Node2D" parent="." unique_id=1587911331]
+
+[node name="Moneda" parent="monedas" unique_id=676698019 instance=ExtResource("5_x2wa3")]
+position = Vector2(230, 503)
+scale = Vector2(0.3, 0.3)
+
+[node name="Moneda2" parent="monedas" unique_id=1438169521 instance=ExtResource("5_x2wa3")]
+position = Vector2(259, 502)
+scale = Vector2(0.3, 0.3)
+
+[node name="Moneda3" parent="monedas" unique_id=1673612632 instance=ExtResource("5_x2wa3")]
+position = Vector2(286, 502)
+scale = Vector2(0.3, 0.3)
+
+[node name="enemigos" type="Node2D" parent="." unique_id=825532381]
+
+[node name="pinchos" parent="enemigos" unique_id=481562610 instance=ExtResource("3_wjl7u")]
 position = Vector2(691, 501)
 
-[node name="ene_mregg" parent="." unique_id=1330691166 instance=ExtResource("4_7uceq")]
-position = Vector2(601, 488)
-
-[node name="Moneda" parent="." unique_id=676698019 instance=ExtResource("5_x2wa3")]
-position = Vector2(493, 458)
+[node name="ene_mregg" parent="enemigos" unique_id=1330691166 instance=ExtResource("4_7uceq")]
+position = Vector2(352, 494)
