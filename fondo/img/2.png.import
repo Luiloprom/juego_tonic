@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5gf1oinrpmdk"
-path="res://.godot/imported/nubes_altas.png-34a652603e1dd91f691e51c298fbd8d5.ctex"
+uid="uid://okfldxwjmrhj"
+path="res://.godot/imported/2.png-d382e6e4adfb3c161653c762e6be0791.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://fondo/img/nubes_altas.png"
-dest_files=["res://.godot/imported/nubes_altas.png-34a652603e1dd91f691e51c298fbd8d5.ctex"]
+source_file="res://fondo/img/2.png"
+dest_files=["res://.godot/imported/2.png-d382e6e4adfb3c161653c762e6be0791.ctex"]
 
 [params]
 

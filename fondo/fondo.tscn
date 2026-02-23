@@ -1,9 +1,7 @@
 [gd_scene format=3 uid="uid://d0c0tqhjruvpy"]
 
-[ext_resource type="Texture2D" uid="uid://dbr7xrbff1h6k" path="res://fondo/img/nubes_bajas.png" id="1_048j0"]
-[ext_resource type="Texture2D" uid="uid://5gf1oinrpmdk" path="res://fondo/img/nubes_altas.png" id="2_s7ydw"]
-[ext_resource type="Texture2D" uid="uid://cfs3q4u52o3v1" path="res://fondo/img/agua.png" id="3_ljd50"]
-[ext_resource type="Texture2D" uid="uid://bouby45wrw8ud" path="res://fondo/img/islas.png" id="4_048j0"]
+[ext_resource type="Texture2D" uid="uid://c4xixqb2hbsqh" path="res://fondo/img/1.png" id="1_dq6rq"]
+[ext_resource type="Texture2D" uid="uid://okfldxwjmrhj" path="res://fondo/img/2.png" id="2_og34b"]
 
 [node name="fondo" type="ParallaxBackground" unique_id=1589648832]
 
@@ -13,35 +11,17 @@ motion_scale = Vector2(0.1, 1)
 motion_mirroring = Vector2(1152, 0)
 
 [node name="sprt_fondo" type="Sprite2D" parent="layer_fondo" unique_id=254541070]
-position = Vector2(2, 117)
-scale = Vector2(1.1950208, 1.4285713)
-texture = ExtResource("1_048j0")
-centered = false
+position = Vector2(578.00006, 235)
+scale = Vector2(2.2588234, 2.4519231)
+texture = ExtResource("1_dq6rq")
 
-[node name="sprt_fondo2" type="Sprite2D" parent="layer_fondo" unique_id=1579912261]
-position = Vector2(1, -21)
-scale = Vector2(1.8687196, 3.9714286)
-texture = ExtResource("2_s7ydw")
-centered = false
-
-[node name="layer_medio" type="ParallaxLayer" parent="." unique_id=1643000694]
-position = Vector2(-2, 158)
-motion_scale = Vector2(0.2, 1)
-motion_mirroring = Vector2(1152, 0)
-
-[node name="sprt_medio" type="Sprite2D" parent="layer_medio" unique_id=2038367233]
-position = Vector2(2, 287)
-scale = Vector2(1.8640777, 2.2846446)
-texture = ExtResource("3_ljd50")
-centered = false
-
-[node name="layer_primer" type="ParallaxLayer" parent="." unique_id=1419995032]
+[node name="layer_rocas" type="ParallaxLayer" parent="." unique_id=1419995032]
 position = Vector2(-2, 158)
 motion_scale = Vector2(0.3, 1)
 motion_mirroring = Vector2(1152, 0)
 
-[node name="sprt_primer" type="Sprite2D" parent="layer_primer" unique_id=1678031382]
-position = Vector2(-47, 191)
-scale = Vector2(2.2378166, 1.5000005)
-texture = ExtResource("4_048j0")
+[node name="sprt_rocas" type="Sprite2D" parent="layer_rocas" unique_id=1678031382]
+position = Vector2(2, -16.999996)
+scale = Vector2(2.2544029, 2.4258375)
+texture = ExtResource("2_og34b")
 centered = false
