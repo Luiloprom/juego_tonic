@@ -10,18 +10,18 @@ func _physics_process(delta: float) -> void:
 		sentido = -sentido
 	if sentido ==1 && $detectorIzquierdo.is_colliding():
 		velocity.x = speed
-		$ani_ene_dyn.flip_h = false
+		$ani_mregg.flip_h = false
 	else:
 		sentido = -1
 	if sentido == -1 && $detectorDerecho.is_colliding():
 		velocity.x = -speed
-		$ani_ene_dyn.flip_h = true
+		$ani_mregg.flip_h = true
 	else:
 		sentido = 1
 	move_and_slide()
 
 func _ready() -> void:
-	$ani_ene_dyn.play("default")
+	$ani_mregg.play("correr")
 
 func _on_ene_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("jugadores"):

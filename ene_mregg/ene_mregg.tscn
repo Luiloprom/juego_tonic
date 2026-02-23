@@ -67,8 +67,8 @@ shape = SubResource("RectangleShape2D_5knsl")
 position = Vector2(5.5, -1.5)
 shape = SubResource("RectangleShape2D_gwyre")
 
-[node name="detector_Izquierdo" type="RayCast2D" parent="." unique_id=1470321439]
+[node name="detectorIzquierdo" type="RayCast2D" parent="." unique_id=1470321439]
 position = Vector2(27, -4)
 
-[node name="detector_Derecho" type="RayCast2D" parent="." unique_id=1851868880]
+[node name="detectorDerecho" type="RayCast2D" parent="." unique_id=1851868880]
 position = Vector2(-16, -5)
