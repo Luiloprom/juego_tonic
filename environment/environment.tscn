@@ -11,10 +11,10 @@
 [node name="Floor" parent="." unique_id=417109721 instance=ExtResource("1_8a1ph")]
 
 [node name="jugador_sonic" parent="." unique_id=1633354352 instance=ExtResource("2_wjl7u")]
-position = Vector2(187, 365)
+position = Vector2(-123, 374)
 
 [node name="pinchos" parent="." unique_id=481562610 instance=ExtResource("3_wjl7u")]
-position = Vector2(701, 510)
+position = Vector2(691, 501)
 
 [node name="ene_mregg" parent="." unique_id=1330691166 instance=ExtResource("4_7uceq")]
 position = Vector2(601, 488)
