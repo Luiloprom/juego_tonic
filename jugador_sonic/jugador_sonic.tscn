@@ -14,9 +14,13 @@
 [ext_resource type="Texture2D" uid="uid://yyqbe4otyga3" path="res://jugador_sonic/img/correr_rapido/3.png" id="12_d5gge"]
 [ext_resource type="Texture2D" uid="uid://cgxmf8cmxuhyj" path="res://jugador_sonic/img/correr_rapido/4.png" id="13_aqlm6"]
 [ext_resource type="Texture2D" uid="uid://crbngy08exwp2" path="res://jugador_sonic/img/morir/1.png" id="14_kyoay"]
+[ext_resource type="Texture2D" uid="uid://b3bsjuh2uv64i" path="res://jugador_sonic/img/deslizar/1.png" id="14_l7h4c"]
 [ext_resource type="Texture2D" uid="uid://dsp6eo45g026q" path="res://jugador_sonic/img/morir/2.png" id="15_8r8eq"]
+[ext_resource type="Texture2D" uid="uid://cdk08bs73d12o" path="res://jugador_sonic/img/deslizar/2.png" id="15_hyqcw"]
+[ext_resource type="Texture2D" uid="uid://ex7q3ol6ju62" path="res://jugador_sonic/img/deslizar/3.png" id="16_6nbb6"]
 [ext_resource type="Texture2D" uid="uid://benw5uqccyyx1" path="res://jugador_sonic/img/morir/3.png" id="16_bg3ee"]
 [ext_resource type="Texture2D" uid="uid://cysjfqjmjb7vo" path="res://jugador_sonic/img/morir/4.png" id="17_ch27l"]
+[ext_resource type="Texture2D" uid="uid://fftm554gu7ef" path="res://jugador_sonic/img/deslizar/4.png" id="17_usnce"]
 [ext_resource type="Texture2D" uid="uid://rad8dycbra8x" path="res://jugador_sonic/img/reposo/1.png" id="18_pjrvn"]
 [ext_resource type="Texture2D" uid="uid://4i02wona3mt6" path="res://jugador_sonic/img/reposo/2.png" id="19_04861"]
 [ext_resource type="Texture2D" uid="uid://bakwfb2qfoent" path="res://jugador_sonic/img/reposo/3.png" id="20_b6ij3"]
@@ -89,6 +93,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("14_l7h4c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_hyqcw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_6nbb6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_usnce")
+}],
+"loop": true,
+"name": &"deslizar",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("14_kyoay")
 }, {
 "duration": 1.0,
@@ -100,7 +121,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("17_ch27l")
 }],
-"loop": true,
+"loop": false,
 "name": &"morir",
 "speed": 5.0
 }, {
@@ -189,21 +210,23 @@ size = Vector2(23, 40)
 [node name="jugador_sonic" type="CharacterBody2D" unique_id=1633354352]
 position = Vector2(5, 17)
 script = ExtResource("1_ugu3f")
+metadata/_edit_group_ = true
 
 [node name="ani_sonic" type="AnimatedSprite2D" parent="." unique_id=1022603970]
 position = Vector2(156, 123)
 scale = Vector2(1.0128205, 1.0178572)
 sprite_frames = SubResource("SpriteFrames_ppn3f")
-animation = &"reposo"
-frame = 3
-frame_progress = 0.09088768
+animation = &"morir"
 
 [node name="col_sonic" type="CollisionShape2D" parent="." unique_id=1105309239]
 position = Vector2(155.5, 123)
 shape = SubResource("RectangleShape2D_cv737")
 
 [node name="cam_sonic" type="Camera2D" parent="." unique_id=851205220]
-zoom = Vector2(2, 2)
+zoom = Vector2(1.5, 1.5)
 limit_left = 0
 limit_bottom = 648
 limit_smoothed = true
+
+[node name="tiempo" type="Timer" parent="." unique_id=450369254]
+wait_time = 3.0

@@ -2,8 +2,8 @@ extends CharacterBody2D
 
 @export var gravity_scale = 2
 
-@export var speed = 500
-@export var sprint_speed = 900
+@export var speed = 300
+@export var sprint_speed = 600
 @export var acceleration = 600
 @export var friction = 1500
 
@@ -44,12 +44,15 @@ func handle_air_acceleration(input_axis, delta):
 func update_animation(input_axis):
 	if input_axis != 0:
 		ani_sonic.flip_h = (input_axis < 0)
+	if not is_on_floor():
+		ani_sonic.play("saltar")
+	elif input_axis == 0 and abs(velocity.x) > 10:
+		ani_sonic.play("deslizar")
+	elif input_axis != 0:
 		if Input.is_action_pressed("correr_rapido"):
 			ani_sonic.play("correr_rapido")
 		else:
 			ani_sonic.play("correr")
-	elif not is_on_floor():
-		ani_sonic.play("saltar")
 	else:
 		ani_sonic.play("reposo")
 
@@ -62,3 +65,10 @@ func _physics_process(delta: float) -> void:
 	handle_air_acceleration(input_axis, delta)
 	update_animation(input_axis)
 	move_and_slide()
+
+func morir():
+	set_physics_process(false)
+	$ani_sonic.play("morir")
+	$tiempo.start()
+	await $tiempo.timeout
+	get_tree().change_scene_to_file("res://menu/menu.tscn")
