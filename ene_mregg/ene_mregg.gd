@@ -4,15 +4,6 @@ extends CharacterBody2D
 @export var speed = 100
 
 var sentido = 1
-
-func _ready() -> void:
-	$ani_mregg.play("correr")
-
-func _on_ene_area_body_entered(body: Node2D) -> void:
-	if body.is_in_group("jugadores"):
-		body.morir()
-		set_physics_process(false)
-
 func _physics_process(delta: float) -> void:
 	velocity.y += gravity * delta
 	if is_on_wall():
@@ -28,3 +19,10 @@ func _physics_process(delta: float) -> void:
 	else:
 		sentido = 1
 	move_and_slide()
+
+func _ready() -> void:
+	$ani_mregg.play("correr")
+
+func _on_ene_area_body_entered(body: Node2D) -> void:
+	if body.is_in_group("jugadores"):
+		get_tree().reload_current_scene()

@@ -9,16 +9,15 @@
 [node name="Environment" type="Node2D" unique_id=476322563]
 
 [node name="Floor" parent="." unique_id=417109721 instance=ExtResource("1_8a1ph")]
-position = Vector2(0, 57)
 
 [node name="jugador_sonic" parent="." unique_id=1633354352 instance=ExtResource("2_wjl7u")]
-position = Vector2(-124, 378)
+position = Vector2(187, 365)
 
 [node name="pinchos" parent="." unique_id=481562610 instance=ExtResource("3_wjl7u")]
-position = Vector2(700, 505)
+position = Vector2(701, 510)
 
 [node name="ene_mregg" parent="." unique_id=1330691166 instance=ExtResource("4_7uceq")]
-position = Vector2(603, 498)
+position = Vector2(601, 488)
 
 [node name="Moneda" parent="." unique_id=676698019 instance=ExtResource("5_x2wa3")]
 position = Vector2(493, 458)

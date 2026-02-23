@@ -28,8 +28,8 @@ autoplay = true
 parameters/looping = false
 
 [node name="img_menu" type="Sprite2D" parent="." unique_id=1990407673]
-position = Vector2(0, 2.2737368e-13)
-scale = Vector2(1.28, 1.2781066)
+position = Vector2(0.99999994, 3.8146973e-06)
+scale = Vector2(1.2788888, 1.2781065)
 texture = ExtResource("2_6nwqt")
 centered = false
 
