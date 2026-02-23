@@ -72,7 +72,7 @@ animations = [{
 radius = 33.01515
 
 [node name="Moneda" type="Area2D" unique_id=676698019]
-position = Vector2(-1, -1)
+position = Vector2(-1, 0)
 script = ExtResource("1_flhnw")
 
 [node name="ani_moneda" type="AnimatedSprite2D" parent="." unique_id=630528293]
