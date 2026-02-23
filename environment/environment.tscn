@@ -2,19 +2,17 @@
 
 [ext_resource type="PackedScene" uid="uid://b86ffpelod8ei" path="res://environment/floor.tscn" id="1_8a1ph"]
 [ext_resource type="PackedScene" uid="uid://c4c0omgua73kv" path="res://jugador_sonic/jugador_sonic.tscn" id="2_wjl7u"]
-[ext_resource type="PackedScene" uid="uid://dgh5aj45746mm" path="res://fondo.tscn" id="3_ehb6n"]
 [ext_resource type="PackedScene" uid="uid://vwnroxlb05co" path="res://pinchos/pinchos.tscn" id="3_wjl7u"]
 [ext_resource type="PackedScene" uid="uid://cibx1pkv4wy5e" path="res://ene_mregg/ene_mregg.tscn" id="4_7uceq"]
 [ext_resource type="PackedScene" uid="uid://jehm2kuh7kjt" path="res://coleccionables/moneda/moneda.tscn" id="5_x2wa3"]
+[ext_resource type="PackedScene" uid="uid://d0c0tqhjruvpy" path="res://fondo/fondo.tscn" id="6_ehb6n"]
 
 [node name="Environment" type="Node2D" unique_id=476322563]
 
 [node name="Floor" parent="." unique_id=417109721 instance=ExtResource("1_8a1ph")]
 
 [node name="jugador_sonic" parent="." unique_id=1633354352 instance=ExtResource("2_wjl7u")]
-position = Vector2(-123, 374)
-
-[node name="fondo" parent="." unique_id=167779352 instance=ExtResource("3_ehb6n")]
+position = Vector2(-91, 379)
 
 [node name="monedas" type="Node2D" parent="." unique_id=1587911331]
 
@@ -37,3 +35,5 @@ position = Vector2(691, 501)
 
 [node name="ene_mregg" parent="enemigos" unique_id=1330691166 instance=ExtResource("4_7uceq")]
 position = Vector2(352, 494)
+
+[node name="fondo" parent="." unique_id=1589648832 instance=ExtResource("6_ehb6n")]
