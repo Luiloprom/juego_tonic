@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmf4dtq1fdr08"
-path="res://.godot/imported/Custom _ Edited - Sonic the Hedgehog Customs - Dr. Eggman - Dr. Eggman.png-a73c410c21cbc6c177164f496dd96b55.ctex"
+uid="uid://bj4dh2a5vparn"
+path="res://.godot/imported/5.png-183f746b8440afd38a262c8f8c194c24.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ene_mregg/img/Custom _ Edited - Sonic the Hedgehog Customs - Dr. Eggman - Dr. Eggman.png"
-dest_files=["res://.godot/imported/Custom _ Edited - Sonic the Hedgehog Customs - Dr. Eggman - Dr. Eggman.png-a73c410c21cbc6c177164f496dd96b55.ctex"]
+source_file="res://ene_mregg/img/correr/5.png"
+dest_files=["res://.godot/imported/5.png-183f746b8440afd38a262c8f8c194c24.ctex"]
 
 [params]
 
