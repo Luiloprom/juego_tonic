@@ -4,7 +4,7 @@ extends CharacterBody2D
 @export var speed = 101
 
 
-@export var ene_mosca_scene: PackedScene  
+@onready var ene_mosca_scene = load("res://ene_mosca/ene_mosca.tscn")
 var tiempo_lanzar = 0.0
 
 var sentido = 1
@@ -19,12 +19,10 @@ func _on_ene_area_body_entered(body: Node2D) -> void:
 		set_physics_process(false)
 
 func lanzar_mosca():
-	if ene_mosca_scene:  # Comprueba null
+	if ene_mosca_scene:
 		var mosca = ene_mosca_scene.instantiate()
-		get_parent().add_child(mosca)
-		mosca.global_position = global_position 
-		print("Mregg pos: ", global_position)
-		print("Mosca pos tras spawn: ", mosca.global_position)
+		get_tree().current_scene.add_child(mosca)
+		mosca.global_position = $spawn_mosca.global_position
 
 func dar_vuelta():
 	sentido = -sentido
@@ -34,7 +32,6 @@ func dar_vuelta():
 func _physics_process(delta: float) -> void:
 	tiempo_lanzar -= delta
 	if tiempo_lanzar <= 0:
-		print("¡LANZANDO MOSCA!")  # ← DEBUG
 		lanzar_mosca()
 		tiempo_lanzar = 2.5
 	

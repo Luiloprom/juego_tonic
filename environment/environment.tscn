@@ -14,7 +14,7 @@
 [node name="Floor" parent="." unique_id=417109721 instance=ExtResource("1_8a1ph")]
 
 [node name="jugador_sonic" parent="." unique_id=1633354352 instance=ExtResource("2_wjl7u")]
-position = Vector2(-91, 379)
+position = Vector2(29, 498)
 
 [node name="monedas" type="Node2D" parent="." unique_id=1587911331]
 
@@ -131,4 +131,4 @@ position = Vector2(291, 500)
 position = Vector2(1039, 500)
 
 [node name="ene_mregg" parent="enemigos" unique_id=1330691166 instance=ExtResource("4_7uceq")]
-position = Vector2(3091, 413)
+position = Vector2(514, 490)

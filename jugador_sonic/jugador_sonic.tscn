@@ -249,18 +249,16 @@ radius = 11.0
 height = 40.0
 
 [node name="jugador_sonic" type="CharacterBody2D" unique_id=1633354352]
-position = Vector2(-112, 500)
+position = Vector2(-2, 0)
 script = ExtResource("1_ugu3f")
 metadata/_edit_group_ = true
 
 [node name="ani_sonic" type="AnimatedSprite2D" parent="." unique_id=1022603970]
-position = Vector2(156, 123)
 scale = Vector2(1.0128205, 1.0178572)
 sprite_frames = SubResource("SpriteFrames_ppn3f")
 animation = &"victoria"
 
 [node name="col_sonic" type="CollisionShape2D" parent="." unique_id=1105309239]
-position = Vector2(155, 122)
 shape = SubResource("CapsuleShape2D_l7h4c")
 
 [node name="cam_sonic" type="Camera2D" parent="." unique_id=851205220]

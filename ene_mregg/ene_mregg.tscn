@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://cibx1pkv4wy5e"]
 
 [ext_resource type="Script" uid="uid://bun0b27ewq284" path="res://ene_mregg/ene_mregg.gd" id="1_gwyre"]
-[ext_resource type="PackedScene" uid="uid://cinhmcbdjt104" path="res://ene_mosca/ene_mosca.tscn" id="2_5knsl"]
 [ext_resource type="Texture2D" uid="uid://dgu2qwqiig2wu" path="res://ene_mregg/img/correr/1.png" id="2_k4i06"]
 [ext_resource type="Texture2D" uid="uid://cy0nyrdjrud6e" path="res://ene_mregg/img/correr/2.png" id="3_5knsl"]
 [ext_resource type="Texture2D" uid="uid://bukr05txoiudd" path="res://ene_mregg/img/correr/3.png" id="4_njwk8"]
@@ -50,9 +49,8 @@ size = Vector2(37, 44)
 size = Vector2(63, 46)
 
 [node name="ene_mregg" type="CharacterBody2D" unique_id=1330691166]
-position = Vector2(279, 225)
 script = ExtResource("1_gwyre")
-ene_mosca_scene = ExtResource("2_5knsl")
+metadata/_edit_group_ = true
 
 [node name="ani_mregg" type="AnimatedSprite2D" parent="." unique_id=1392963193]
 sprite_frames = SubResource("SpriteFrames_k4i06")
@@ -74,5 +72,8 @@ position = Vector2(31, -3)
 
 [node name="detectorDerecho" type="RayCast2D" parent="." unique_id=1851868880]
 position = Vector2(-34, -5)
+
+[node name="spawn_mosca" type="Marker2D" parent="." unique_id=1529091321]
+position = Vector2(0, -56)
 
 [connection signal="body_entered" from="ene_area" to="." method="_on_ene_area_body_entered"]

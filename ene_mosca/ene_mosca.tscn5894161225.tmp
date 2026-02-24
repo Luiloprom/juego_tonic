@@ -31,7 +31,6 @@ size = Vector2(20, 10)
 [node name="ene_mosca" type="CharacterBody2D" unique_id=838453432]
 scale = Vector2(1.5, 1.5)
 script = ExtResource("1_houon")
-speed = 170
 metadata/_edit_group_ = true
 
 [node name="ani_mosca" type="AnimatedSprite2D" parent="." unique_id=1551877131]

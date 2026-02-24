@@ -138,7 +138,7 @@ func _ready() -> void:
 # Contador de monedas
 var monedas: int = 0
 
-@export var total_monedas: int = 2
+@export var total_monedas: int = 23
 
 # Agrega una moneda al contador del jugador
 func add_moneda():
