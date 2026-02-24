@@ -21,17 +21,14 @@
 [ext_resource type="Texture2D" uid="uid://rtoxwb043o5" path="res://jugador_sonic/img/morir/3.png" id="16_bg3ee"]
 [ext_resource type="Texture2D" uid="uid://s5v4ptfr60ma" path="res://jugador_sonic/img/morir/4.png" id="17_ch27l"]
 [ext_resource type="Texture2D" uid="uid://fftm554gu7ef" path="res://jugador_sonic/img/deslizar/4.png" id="17_usnce"]
-[ext_resource type="Texture2D" uid="uid://rad8dycbra8x" path="res://jugador_sonic/img/reposo/1.png" id="18_pjrvn"]
+[ext_resource type="Texture2D" uid="uid://bisdliiutg6k6" path="res://jugador_sonic/img/reposo/1.png" id="18_pjrvn"]
 [ext_resource type="Texture2D" uid="uid://j006jngbjpld" path="res://jugador_sonic/img/deslizar/5.png" id="18_u43np"]
-[ext_resource type="Texture2D" uid="uid://4i02wona3mt6" path="res://jugador_sonic/img/reposo/2.png" id="19_04861"]
-[ext_resource type="Texture2D" uid="uid://bakwfb2qfoent" path="res://jugador_sonic/img/reposo/3.png" id="20_b6ij3"]
-[ext_resource type="Texture2D" uid="uid://b5vbd5mbjx2t6" path="res://jugador_sonic/img/reposo/4.png" id="21_11cty"]
-[ext_resource type="Texture2D" uid="uid://5jr576bna5p3" path="res://jugador_sonic/img/reposo/5.png" id="22_6t8pk"]
-[ext_resource type="Texture2D" uid="uid://41vmeyevvvhx" path="res://jugador_sonic/img/reposo/6.png" id="23_e1lrp"]
-[ext_resource type="Texture2D" uid="uid://dp8k44rksgsgl" path="res://jugador_sonic/img/reposo/7.png" id="24_ytr7o"]
-[ext_resource type="Texture2D" uid="uid://clg4jc5b8vjp" path="res://jugador_sonic/img/reposo/8.png" id="25_ycgdm"]
-[ext_resource type="Texture2D" uid="uid://byqawufaaa4rl" path="res://jugador_sonic/img/reposo/9.png" id="26_bsadl"]
-[ext_resource type="Texture2D" uid="uid://ck6lrqm2wd162" path="res://jugador_sonic/img/reposo/10.png" id="27_jw7rg"]
+[ext_resource type="Texture2D" uid="uid://bq03avyvld75m" path="res://jugador_sonic/img/reposo/2.png" id="19_04861"]
+[ext_resource type="Texture2D" uid="uid://d07h15dqsy3bq" path="res://jugador_sonic/img/reposo/3.png" id="20_b6ij3"]
+[ext_resource type="Texture2D" uid="uid://bledpte1q4yun" path="res://jugador_sonic/img/reposo/4.png" id="21_11cty"]
+[ext_resource type="Texture2D" uid="uid://bhpim7byhai35" path="res://jugador_sonic/img/reposo/5.png" id="22_6t8pk"]
+[ext_resource type="Texture2D" uid="uid://b8sudm1f5524g" path="res://jugador_sonic/img/reposo/6.png" id="23_e1lrp"]
+[ext_resource type="Texture2D" uid="uid://5x5dkw2qq0f5" path="res://jugador_sonic/img/reposo/7.png" id="24_ytr7o"]
 [ext_resource type="Texture2D" uid="uid://blfvu2xvu5rf8" path="res://jugador_sonic/img/saltar/1.png" id="28_hmkuv"]
 [ext_resource type="Texture2D" uid="uid://cx7oqhxaciqcr" path="res://jugador_sonic/img/saltar/2.png" id="29_r4mi2"]
 [ext_resource type="Texture2D" uid="uid://c2x5rabbt7t5x" path="res://jugador_sonic/img/saltar/3.png" id="30_svx23"]
@@ -157,15 +154,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("24_ytr7o")
-}, {
-"duration": 1.0,
-"texture": ExtResource("25_ycgdm")
-}, {
-"duration": 1.0,
-"texture": ExtResource("26_bsadl")
-}, {
-"duration": 1.0,
-"texture": ExtResource("27_jw7rg")
 }],
 "loop": true,
 "name": &"reposo",
@@ -256,7 +244,8 @@ metadata/_edit_group_ = true
 [node name="ani_sonic" type="AnimatedSprite2D" parent="." unique_id=1022603970]
 scale = Vector2(1.0128205, 1.0178572)
 sprite_frames = SubResource("SpriteFrames_ppn3f")
-animation = &"victoria"
+animation = &"reposo"
+frame_progress = 0.0259707
 
 [node name="col_sonic" type="CollisionShape2D" parent="." unique_id=1105309239]
 shape = SubResource("CapsuleShape2D_l7h4c")

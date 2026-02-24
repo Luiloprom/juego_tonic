@@ -119,16 +119,16 @@ position = Vector2(691, 500)
 position = Vector2(2786, 421)
 
 [node name="pinchos3" parent="enemigos" unique_id=145301714 instance=ExtResource("3_wjl7u")]
-position = Vector2(2495, 420)
+position = Vector2(1330, 533)
 
 [node name="pinchos4" parent="enemigos" unique_id=1814393367 instance=ExtResource("3_wjl7u")]
-position = Vector2(2253, 422)
+position = Vector2(1361, 533)
 
 [node name="pinchos5" parent="enemigos" unique_id=2126680138 instance=ExtResource("3_wjl7u")]
 position = Vector2(291, 500)
 
 [node name="pinchos6" parent="enemigos" unique_id=610424220 instance=ExtResource("3_wjl7u")]
-position = Vector2(1039, 500)
+position = Vector2(1392, 533)
 
 [node name="ene_mregg" parent="enemigos" unique_id=1330691166 instance=ExtResource("4_7uceq")]
-position = Vector2(514, 490)
+position = Vector2(3107, 404)
