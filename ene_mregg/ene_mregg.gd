@@ -21,8 +21,8 @@ func _on_ene_area_body_entered(body: Node2D) -> void:
 func lanzar_mosca():
 	if ene_mosca_scene:  # Comprueba null
 		var mosca = ene_mosca_scene.instantiate()
-		get_parent().get_parent().add_child(mosca)
-		mosca.global_position = global_position
+		get_parent().add_child(mosca)
+		mosca.global_position = global_position 
 		print("Mregg pos: ", global_position)
 		print("Mosca pos tras spawn: ", mosca.global_position)
 

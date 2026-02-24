@@ -21,7 +21,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_3o4tr")
 }],
 "loop": true,
-"name": &"default",
+"name": &"volar",
 "speed": 20.0
 }]
 
@@ -36,7 +36,7 @@ metadata/_edit_group_ = true
 [node name="ani_mosca" type="AnimatedSprite2D" parent="." unique_id=1551877131]
 position = Vector2(277, 215)
 sprite_frames = SubResource("SpriteFrames_yopv3")
-frame_progress = 0.1722558
+animation = &"volar"
 
 [node name="col_mosca" type="CollisionShape2D" parent="." unique_id=1808866790]
 position = Vector2(277, 216)
