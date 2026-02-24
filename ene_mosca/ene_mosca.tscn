@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://cinhmcbdjt104"]
+
+[ext_resource type="Texture2D" uid="uid://dv2n72jwytaxk" path="res://ene_mosca/img/moscas.png" id="1_bbh83"]
+[ext_resource type="Script" uid="uid://besciwqu7pnx" path="res://ene_mosca/ene_mosca.gd" id="1_houon"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_houon"]
+atlas = ExtResource("1_bbh83")
+region = Rect2(4, 51, 22, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3o4tr"]
+atlas = ExtResource("1_bbh83")
+region = Rect2(26, 51, 22, 14)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yopv3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_houon")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3o4tr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ops8d"]
+size = Vector2(20, 10)
+
+[node name="ene_mosca" type="CharacterBody2D" unique_id=838453432]
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_houon")
+metadata/_edit_group_ = true
+
+[node name="ani_mosca" type="AnimatedSprite2D" parent="." unique_id=1551877131]
+position = Vector2(277, 215)
+sprite_frames = SubResource("SpriteFrames_yopv3")
+frame_progress = 0.1722558
+
+[node name="col_mosca" type="CollisionShape2D" parent="." unique_id=1808866790]
+position = Vector2(277, 216)
+shape = SubResource("RectangleShape2D_ops8d")
+
+[node name="tiempo" type="Timer" parent="." unique_id=1285065104]
+wait_time = 4.0
