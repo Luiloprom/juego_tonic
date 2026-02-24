@@ -239,7 +239,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("38_gdvi3")
 }],
-"loop": true,
+"loop": false,
 "name": &"victoria",
 "speed": 5.0
 }]
@@ -257,9 +257,7 @@ metadata/_edit_group_ = true
 position = Vector2(156, 123)
 scale = Vector2(1.0128205, 1.0178572)
 sprite_frames = SubResource("SpriteFrames_ppn3f")
-animation = &"rodar"
-frame = 2
-frame_progress = 0.28039563
+animation = &"victoria"
 
 [node name="col_sonic" type="CollisionShape2D" parent="." unique_id=1105309239]
 position = Vector2(155, 122)
@@ -275,6 +273,7 @@ position_smoothing_speed = 8.0
 drag_horizontal_offset = 1.0
 
 [node name="tiempo" type="Timer" parent="." unique_id=450369254]
+wait_time = 3.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=759067599]
 

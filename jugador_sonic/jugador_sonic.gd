@@ -138,9 +138,21 @@ func _ready() -> void:
 # Contador de monedas
 var monedas: int = 0
 
+@export var total_monedas: int = 2
 
 # Agrega una moneda al contador del jugador
 func add_moneda():
 	$audio_moneda.play()
-	monedas+=1
+	monedas += 1
 	contador.actualizar(monedas)
+	
+	if monedas >= total_monedas:
+		victoria()
+
+func victoria():
+	velocity = Vector2.ZERO
+	set_physics_process(false)
+	ani_sonic.play("victoria")
+	$tiempo.start()
+	await $tiempo.timeout
+	get_tree().change_scene_to_file("res://menu/menu.tscn")
