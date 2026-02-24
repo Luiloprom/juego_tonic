@@ -28,6 +28,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ops8d"]
 size = Vector2(20, 10)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_houon"]
+size = Vector2(19.333334, 12.666668)
+
 [node name="ene_mosca" type="CharacterBody2D" unique_id=838453432]
 scale = Vector2(1.5, 1.5)
 script = ExtResource("1_houon")
@@ -46,8 +49,9 @@ wait_time = 4.0
 
 [node name="mosca_area" type="Area2D" parent="." unique_id=1935391897]
 
-[node name="col_mosca" type="CollisionShape2D" parent="mosca_area" unique_id=1337495439]
-shape = SubResource("RectangleShape2D_ops8d")
+[node name="col_mosca_area" type="CollisionShape2D" parent="mosca_area" unique_id=1096451733]
+position = Vector2(-0.33333302, 0.33333382)
+shape = SubResource("RectangleShape2D_houon")
 
 [connection signal="timeout" from="tiempo" to="." method="_on_tiempo_timeout"]
 [connection signal="body_entered" from="mosca_area" to="." method="_on_mosca_area_body_entered"]

@@ -19,7 +19,7 @@ func seguir():
 
 func _on_tiempo_timeout():
 	queue_free()
-
+	
 func _on_mosca_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("jugadores"):
 		body.morir()
