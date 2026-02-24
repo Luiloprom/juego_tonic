@@ -37,10 +37,15 @@
 [ext_resource type="Texture2D" uid="uid://c2x5rabbt7t5x" path="res://jugador_sonic/img/saltar/3.png" id="30_svx23"]
 [ext_resource type="Texture2D" uid="uid://dp4s7kmpisd0a" path="res://jugador_sonic/img/saltar/4.png" id="31_1ug27"]
 [ext_resource type="Texture2D" uid="uid://bdr4qk7ark2qo" path="res://jugador_sonic/img/victoria/1.png" id="32_50thl"]
+[ext_resource type="Texture2D" uid="uid://c0kccurl7i370" path="res://jugador_sonic/img/rodar/1.png" id="33_aqlm6"]
 [ext_resource type="Texture2D" uid="uid://ht4hmoelkvx5" path="res://jugador_sonic/img/victoria/2.png" id="33_kyoc1"]
+[ext_resource type="Texture2D" uid="uid://bny5pw5tscj4" path="res://jugador_sonic/img/rodar/2.png" id="34_kyoay"]
 [ext_resource type="Texture2D" uid="uid://04it4gq1ge3s" path="res://jugador_sonic/img/victoria/3.png" id="34_wlb73"]
+[ext_resource type="Texture2D" uid="uid://bpcyhvyxlv6ri" path="res://jugador_sonic/img/rodar/3.png" id="35_8r8eq"]
 [ext_resource type="Texture2D" uid="uid://da1epuy3h82mx" path="res://jugador_sonic/img/victoria/4.png" id="35_j3ufw"]
+[ext_resource type="Texture2D" uid="uid://deyxyl40mgee3" path="res://jugador_sonic/img/rodar/4.png" id="36_bg3ee"]
 [ext_resource type="Texture2D" uid="uid://cyi745a4g2rr7" path="res://jugador_sonic/img/victoria/5.png" id="36_lavj7"]
+[ext_resource type="Texture2D" uid="uid://bingpmjyqb3nm" path="res://jugador_sonic/img/rodar/5.png" id="37_ch27l"]
 [ext_resource type="Texture2D" uid="uid://bq4k1iykoua54" path="res://jugador_sonic/img/victoria/6.png" id="37_rpd7k"]
 [ext_resource type="Texture2D" uid="uid://cm4bdqqt43u1e" path="res://jugador_sonic/img/victoria/7.png" id="38_gdvi3"]
 [ext_resource type="PackedScene" uid="uid://dl3h6sbfxhjjc" path="res://contador/contador.tscn" id="43_hyqcw"]
@@ -168,6 +173,35 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("33_aqlm6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_kyoay")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_aqlm6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_8r8eq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_aqlm6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_bg3ee")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_aqlm6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_ch27l")
+}],
+"loop": true,
+"name": &"rodar",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("28_hmkuv")
 }, {
 "duration": 1.0,
@@ -223,8 +257,9 @@ metadata/_edit_group_ = true
 position = Vector2(156, 123)
 scale = Vector2(1.0128205, 1.0178572)
 sprite_frames = SubResource("SpriteFrames_ppn3f")
-animation = &"deslizar"
-frame_progress = 0.7963992
+animation = &"rodar"
+frame = 2
+frame_progress = 0.28039563
 
 [node name="col_sonic" type="CollisionShape2D" parent="." unique_id=1105309239]
 position = Vector2(155, 122)

@@ -11,6 +11,8 @@ extends CharacterBody2D
 @export var air_acceleration = 2000
 @export var air_friction = 700
 
+var ball = false
+
 @onready var ani_sonic = $ani_sonic
 
 func apply_gravity(delta):
@@ -18,6 +20,8 @@ func apply_gravity(delta):
 		velocity += get_gravity() * delta * gravity_scale
 
 func handle_acceleration(input_axis, delta):
+	if ball:
+		return
 	if not is_on_floor(): 
 		return
 	if input_axis != 0:
@@ -27,6 +31,8 @@ func handle_acceleration(input_axis, delta):
 			velocity.x = speed * input_axis
 
 func apply_friction(input_axis, delta):
+	if ball:
+		return
 	if input_axis == 0 and is_on_floor():
 		velocity.x = move_toward(velocity.x, 0, friction * delta)
 
@@ -41,7 +47,52 @@ func handle_air_acceleration(input_axis, delta):
 	if input_axis != 0:
 		velocity.x = speed * input_axis
 
+func handle_roll(input_axis, delta):
+	# Entrar en bola
+	if not ball:
+		if is_on_floor() and Input.is_action_just_pressed("rodar") and abs(velocity.x) > 50:
+			ball = true
+
+	# comportamiento de la bola
+	else:
+		# salir de bola
+		if Input.is_action_just_pressed("rodar"):
+			ball = false
+			return
+
+		# Salir si te mueves
+		if input_axis != 0 and abs(velocity.x) < 150:
+			ball = false
+			return
+
+		if is_on_floor():
+			var floor_normal = get_floor_normal()
+
+			# Pendiente
+			if abs(floor_normal.x) > 0.1:
+				var slope_force = (1.0 - floor_normal.y) * sign(floor_normal.x)
+
+				if sign(velocity.x) == sign(-floor_normal.x):
+					# Bajando
+					slope_force *= 1
+				else:
+					# Subiendo
+					slope_force *= 2.5
+
+				velocity.x += slope_force * 300 * delta
+
+			# Fricción en plano
+			if floor_normal.y > 0.9:
+				velocity.x = move_toward(velocity.x, 0, friction * 0.2 * delta)
+
+		# Salir si se detiene
+		if abs(velocity.x) < 20:
+			ball = false
+
 func update_animation(input_axis):
+	if ball:
+		ani_sonic.play("rodar")
+		return
 	if input_axis != 0:
 		ani_sonic.flip_h = (input_axis < 0)
 	if not is_on_floor():
@@ -60,6 +111,7 @@ func _physics_process(delta: float) -> void:
 	var input_axis = Input.get_axis("mover_izquierda","mover_derecha")
 	apply_gravity(delta)
 	handle_acceleration(input_axis, delta)
+	handle_roll(input_axis, delta)
 	apply_friction(input_axis, delta)
 	handle_jump()
 	handle_air_acceleration(input_axis, delta)
