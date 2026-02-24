@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cibx1pkv4wy5e"]
 
 [ext_resource type="Script" uid="uid://bun0b27ewq284" path="res://ene_mregg/ene_mregg.gd" id="1_gwyre"]
+[ext_resource type="PackedScene" uid="uid://cinhmcbdjt104" path="res://ene_mosca/ene_mosca.tscn" id="2_5knsl"]
 [ext_resource type="Texture2D" uid="uid://dgu2qwqiig2wu" path="res://ene_mregg/img/correr/1.png" id="2_k4i06"]
 [ext_resource type="Texture2D" uid="uid://cy0nyrdjrud6e" path="res://ene_mregg/img/correr/2.png" id="3_5knsl"]
 [ext_resource type="Texture2D" uid="uid://bukr05txoiudd" path="res://ene_mregg/img/correr/3.png" id="4_njwk8"]
@@ -51,6 +52,7 @@ size = Vector2(63, 46)
 [node name="ene_mregg" type="CharacterBody2D" unique_id=1330691166]
 position = Vector2(279, 225)
 script = ExtResource("1_gwyre")
+ene_mosca_scene = ExtResource("2_5knsl")
 
 [node name="ani_mregg" type="AnimatedSprite2D" parent="." unique_id=1392963193]
 sprite_frames = SubResource("SpriteFrames_k4i06")
