@@ -4,13 +4,13 @@
 [ext_resource type="Script" uid="uid://brp401f5a4vtd" path="res://pinchos/pinchos.gd" id="1_ntt2e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i3k25"]
-size = Vector2(34, 32)
+size = Vector2(52, 48)
 
 [node name="pinchos" type="Area2D" unique_id=481562610]
 script = ExtResource("1_ntt2e")
 
 [node name="spr_pinchos" type="Sprite2D" parent="." unique_id=1299804305]
-scale = Vector2(2, 2)
+scale = Vector2(3, 3)
 texture = ExtResource("1_6ul0w")
 
 [node name="col_pinchos" type="CollisionShape2D" parent="." unique_id=360548837]

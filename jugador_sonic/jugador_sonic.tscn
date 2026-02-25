@@ -244,8 +244,7 @@ metadata/_edit_group_ = true
 [node name="ani_sonic" type="AnimatedSprite2D" parent="." unique_id=1022603970]
 scale = Vector2(1.0128205, 1.0178572)
 sprite_frames = SubResource("SpriteFrames_ppn3f")
-animation = &"reposo"
-frame_progress = 0.0259707
+animation = &"victoria"
 
 [node name="col_sonic" type="CollisionShape2D" parent="." unique_id=1105309239]
 shape = SubResource("CapsuleShape2D_l7h4c")
