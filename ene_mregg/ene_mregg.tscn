@@ -56,6 +56,7 @@ metadata/_edit_group_ = true
 sprite_frames = SubResource("SpriteFrames_k4i06")
 animation = &"correr"
 frame = 2
+flip_h = true
 
 [node name="col_mregg" type="CollisionShape2D" parent="." unique_id=700487693]
 position = Vector2(5.5, 1)
