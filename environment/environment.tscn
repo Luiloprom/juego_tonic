@@ -14,7 +14,8 @@
 [node name="fondo" parent="." unique_id=1589648832 instance=ExtResource("6_ehb6n")]
 
 [node name="jugador_sonic" parent="." unique_id=1633354352 instance=ExtResource("2_wjl7u")]
-position = Vector2(2660, 498)
+position = Vector2(4705, 529)
+boost = 400.0
 
 [node name="monedas" type="Node2D" parent="." unique_id=1587911331]
 

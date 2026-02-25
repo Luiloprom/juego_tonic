@@ -6,6 +6,7 @@ extends CharacterBody2D
 @export var sprint_speed = 450
 @export var acceleration = 600
 @export var friction = 1500
+@export var boost = 80.0 
 
 @export var jump_force = -700
 @export var air_acceleration = 2000
@@ -52,6 +53,8 @@ func handle_roll(input_axis, delta):
 	if not ball:
 		if is_on_floor() and Input.is_action_just_pressed("rodar") and abs(velocity.x) > 50:
 			ball = true
+			 
+			velocity.x += sign(velocity.x) * boost
 		return
 
 	# Salir pulsando rodar
@@ -75,10 +78,10 @@ func handle_roll(input_axis, delta):
 
 		# FRICCIÓN FUERTE en plano (frena rápido)
 		if floor_normal.y > 0.9:
-			velocity.x = move_toward(velocity.x, 0, friction * 0.6 * delta)
+			velocity.x = move_toward(velocity.x, 0, friction * 1 * delta)
 		# FRICCIÓN LIGERA en pendiente (dura más)
 		else:
-			velocity.x = move_toward(velocity.x, 0, friction * 0.15 * delta)
+			velocity.x = move_toward(velocity.x, 0, friction * 0.3 * delta)
 
 	# Salir en plano cuando lento (dura ~1-2 seg)
 	if abs(velocity.x) < 30:
@@ -116,6 +119,7 @@ func _physics_process(delta: float) -> void:
 
 func morir():
 	if ball: return
+	get_tree().call_group("enemigos", "set_physics_process", false)
 	set_physics_process(false)
 	$ani_sonic.play("morir")
 	$tiempo.start()

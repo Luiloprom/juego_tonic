@@ -6,6 +6,7 @@ var jugador = null
 
 func _ready():
 	jugador = get_tree().get_first_node_in_group("jugadores")
+	add_to_group("enemigos")
 	$ani_mosca.play("volar")
 	$tiempo.start(4.0)
 
