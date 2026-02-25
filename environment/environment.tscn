@@ -14,7 +14,7 @@
 [node name="Floor" parent="." unique_id=417109721 instance=ExtResource("1_8a1ph")]
 
 [node name="jugador_sonic" parent="." unique_id=1633354352 instance=ExtResource("2_wjl7u")]
-position = Vector2(29, 498)
+position = Vector2(18, 497)
 
 [node name="monedas" type="Node2D" parent="." unique_id=1587911331]
 
@@ -116,7 +116,7 @@ scale = Vector2(0.3, 0.3)
 position = Vector2(691, 500)
 
 [node name="pinchos2" parent="enemigos" unique_id=462201020 instance=ExtResource("3_wjl7u")]
-position = Vector2(2786, 421)
+position = Vector2(2775, 500)
 
 [node name="pinchos3" parent="enemigos" unique_id=145301714 instance=ExtResource("3_wjl7u")]
 position = Vector2(1330, 533)
@@ -131,4 +131,4 @@ position = Vector2(291, 500)
 position = Vector2(1392, 533)
 
 [node name="ene_mregg" parent="enemigos" unique_id=1330691166 instance=ExtResource("4_7uceq")]
-position = Vector2(3107, 404)
+position = Vector2(3099, 495)

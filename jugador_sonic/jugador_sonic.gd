@@ -115,6 +115,7 @@ func _physics_process(delta: float) -> void:
 	update_animation(input_axis)
 
 func morir():
+	if ball: return
 	set_physics_process(false)
 	$ani_sonic.play("morir")
 	$tiempo.start()
