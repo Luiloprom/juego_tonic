@@ -3,7 +3,7 @@ extends CharacterBody2D
 @export var gravity_scale = 2
 
 @export var speed = 300
-@export var sprint_speed = 600
+@export var sprint_speed = 450
 @export var acceleration = 600
 @export var friction = 1500
 
@@ -52,42 +52,37 @@ func handle_roll(input_axis, delta):
 	if not ball:
 		if is_on_floor() and Input.is_action_just_pressed("rodar") and abs(velocity.x) > 50:
 			ball = true
+		return
 
-	# comportamiento de la bola
-	else:
-		# salir de bola
-		if Input.is_action_just_pressed("rodar"):
-			ball = false
-			return
+	# Salir pulsando rodar
+	if Input.is_action_just_pressed("rodar"):
+		ball = false
+		return
 
-		# Salir si te mueves
-		if input_axis != 0 and abs(velocity.x) < 150:
-			ball = false
-			return
+	if is_on_floor():
+		var floor_normal = get_floor_normal()
 
-		if is_on_floor():
-			var floor_normal = get_floor_normal()
+		# ¡SIN input! Solo momentum + pendiente
 
-			# Pendiente
-			if abs(floor_normal.x) > 0.1:
-				var slope_force = (1.0 - floor_normal.y) * sign(floor_normal.x)
+		# Pendiente
+		if abs(floor_normal.x) > 0.1:
+			var slope_force = (1.0 - floor_normal.y) * sign(floor_normal.x)
+			if sign(velocity.x) == sign(-floor_normal.x):
+				slope_force *= 1
+			else:
+				slope_force *= 2.5
+			velocity.x += slope_force * 300 * delta
 
-				if sign(velocity.x) == sign(-floor_normal.x):
-					# Bajando
-					slope_force *= 1
-				else:
-					# Subiendo
-					slope_force *= 2.5
+		# FRICCIÓN FUERTE en plano (frena rápido)
+		if floor_normal.y > 0.9:
+			velocity.x = move_toward(velocity.x, 0, friction * 0.6 * delta)
+		# FRICCIÓN LIGERA en pendiente (dura más)
+		else:
+			velocity.x = move_toward(velocity.x, 0, friction * 0.15 * delta)
 
-				velocity.x += slope_force * 300 * delta
-
-			# Fricción en plano
-			if floor_normal.y > 0.9:
-				velocity.x = move_toward(velocity.x, 0, friction * 0.2 * delta)
-
-		# Salir si se detiene
-		if abs(velocity.x) < 20:
-			ball = false
+	# Salir en plano cuando lento (dura ~1-2 seg)
+	if abs(velocity.x) < 30:
+		ball = false
 
 func update_animation(input_axis):
 	if ball:
