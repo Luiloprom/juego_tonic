@@ -15,7 +15,7 @@
 [node name="fondo" parent="." unique_id=1589648832 instance=ExtResource("6_ehb6n")]
 
 [node name="jugador_sonic" parent="." unique_id=1633354352 instance=ExtResource("2_wjl7u")]
-position = Vector2(3349, 418)
+position = Vector2(40, 495)
 boost = 400.0
 
 [node name="monedas" type="Node2D" parent="." unique_id=1587911331]
@@ -197,12 +197,6 @@ position = Vector2(3811, 405)
 [node name="pinchos8" parent="enemigos" unique_id=603722081 instance=ExtResource("3_wjl7u")]
 position = Vector2(3850, 405)
 
-[node name="pinchos10" parent="enemigos" unique_id=2096371365 instance=ExtResource("3_wjl7u")]
-position = Vector2(1338, 625)
-
-[node name="pinchos11" parent="enemigos" unique_id=1290637141 instance=ExtResource("3_wjl7u")]
-position = Vector2(1388, 625)
-
 [node name="ene_mregg" parent="enemigos" unique_id=1330691166 instance=ExtResource("4_7uceq")]
 position = Vector2(3075, 490)
 rotation = -6.2831855
@@ -213,7 +207,7 @@ position = Vector2(3889, 405)
 [node name="vidas" type="Node2D" parent="." unique_id=550148026]
 
 [node name="vida" parent="vidas" unique_id=105311158 instance=ExtResource("7_vh8kr")]
-position = Vector2(3846, 238)
+position = Vector2(456, 490)
 
 [node name="vida2" parent="vidas" unique_id=1706206688 instance=ExtResource("7_vh8kr")]
-position = Vector2(2228, 485)
+position = Vector2(169, 493)

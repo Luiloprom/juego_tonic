@@ -47,6 +47,8 @@
 [ext_resource type="Texture2D" uid="uid://cm4bdqqt43u1e" path="res://jugador_sonic/img/victoria/7.png" id="38_gdvi3"]
 [ext_resource type="PackedScene" uid="uid://dl3h6sbfxhjjc" path="res://contador/contador.tscn" id="43_hyqcw"]
 [ext_resource type="AudioStream" uid="uid://crr75mfr0ptyd" path="res://coleccionables/moneda/moneda.mp3" id="44_6nbb6"]
+[ext_resource type="PackedScene" uid="uid://cqqn6ru8gqcrh" path="res://contador_vidas/contador_vidas.tscn" id="47_i1xhl"]
+[ext_resource type="AudioStream" uid="uid://hrbq0th0i2b3" path="res://jugador_sonic/victoria.mp3" id="49_d5gge"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ppn3f"]
 animations = [{
@@ -129,7 +131,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("17_ch27l")
 }],
-"loop": false,
+"loop": true,
 "name": &"morir",
 "speed": 5.0
 }, {
@@ -244,7 +246,7 @@ metadata/_edit_group_ = true
 [node name="ani_sonic" type="AnimatedSprite2D" parent="." unique_id=1022603970]
 scale = Vector2(1.0128205, 1.0178572)
 sprite_frames = SubResource("SpriteFrames_ppn3f")
-animation = &"victoria"
+animation = &"reposo"
 
 [node name="col_sonic" type="CollisionShape2D" parent="." unique_id=1105309239]
 shape = SubResource("CapsuleShape2D_l7h4c")
@@ -265,6 +267,11 @@ wait_time = 3.0
 
 [node name="Contador" parent="CanvasLayer" unique_id=1321579784 instance=ExtResource("43_hyqcw")]
 
+[node name="contador_vidas" parent="CanvasLayer" unique_id=1174036478 instance=ExtResource("47_i1xhl")]
+
 [node name="audio_moneda" type="AudioStreamPlayer2D" parent="." unique_id=1931927626]
 position = Vector2(-14, -21)
 stream = ExtResource("44_6nbb6")
+
+[node name="audio_victoria" type="AudioStreamPlayer2D" parent="." unique_id=939302455]
+stream = ExtResource("49_d5gge")

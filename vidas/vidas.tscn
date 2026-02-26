@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bvh26pre4xciu"]
+
+[ext_resource type="Script" uid="uid://dnv27ed845l3x" path="res://vidas/vidas.gd" id="1_nkgs3"]
+[ext_resource type="Texture2D" uid="uid://b41c7w4ic5m8t" path="res://vidas/img/1.png" id="2_ref1k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s6smx"]
+size = Vector2(26, 26)
+
+[node name="vida" type="Area2D" unique_id=105311158]
+script = ExtResource("1_nkgs3")
+metadata/_edit_group_ = true
+
+[node name="spr_vida" type="Sprite2D" parent="." unique_id=580405235]
+texture = ExtResource("2_ref1k")
+
+[node name="col_vida" type="CollisionShape2D" parent="." unique_id=262097836]
+shape = SubResource("RectangleShape2D_s6smx")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

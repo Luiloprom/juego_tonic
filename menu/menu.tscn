@@ -59,7 +59,7 @@ offset_left = 26.0
 offset_top = 15.0
 offset_right = 262.0
 offset_bottom = 79.0
-text = "Sonic"
+text = "TONYC"
 label_settings = SubResource("LabelSettings_juveg")
 
 [connection signal="pressed" from="vbox_menu/btn_start" to="." method="_on_btn_start_pressed"]
