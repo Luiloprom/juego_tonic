@@ -124,25 +124,25 @@ func morir():
 	vidas -= 1
 	contador_vidas.actualizar(vidas)
 	ani_sonic.play("morir")
-	$tiempo.start()
-	await $tiempo.timeout
+	esperarTiempo()
 	morirCompleto()
-	
-	
 
 func morirCompleto():
 	if vidas <= 0:
 		get_tree().change_scene_to_file("res://menu_muerte/menu_muerte.tscn")
 	else:
-		global_position = Vector2(40, 495)
-		velocity = Vector2.ZERO
-		ball = false
-		ani_sonic.play("reposo")
+		respawnear()
 		activarFisicas(true)
 
 func activarFisicas(opcion: bool):
 	set_physics_process(opcion)
 	get_tree().call_group("enemigos", "set_physics_process", opcion)
+
+func respawnear():
+	global_position = Vector2(40, 495)
+	velocity = Vector2.ZERO
+	ball = false
+	ani_sonic.play("reposo")
 
 # ========== MONEDAS ========== #
 func add_moneda():
@@ -166,6 +166,10 @@ func victoria():
 	velocity = Vector2.ZERO
 	set_physics_process(false)
 	ani_sonic.play("victoria")
+	esperarTiempo()
+	get_tree().change_scene_to_file("res://menu/menu.tscn")
+
+# ========== TIEMPO ==========
+func esperarTiempo():
 	$tiempo.start()
 	await $tiempo.timeout
-	get_tree().change_scene_to_file("res://menu/menu.tscn")
