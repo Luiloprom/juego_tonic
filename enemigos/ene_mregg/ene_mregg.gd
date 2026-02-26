@@ -35,7 +35,7 @@ func _physics_process(delta: float) -> void:
 	tiempo_lanzar -= delta
 	if tiempo_lanzar <= 0:
 		lanzar_mosca()
-		tiempo_lanzar = 2.5
+		tiempo_lanzar = 5
 	
 	velocity.y += gravity * delta
 	if is_on_wall():
