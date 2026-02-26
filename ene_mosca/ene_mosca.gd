@@ -10,17 +10,16 @@ func _ready():
 	$ani_mosca.play("volar")
 	$tiempo.start(4.0)
 
+func dar_vuelta(): return
+
 func _physics_process(delta: float) -> void:
 	seguir()
 
 func seguir():
 	if jugador != null:
 		velocity = position.direction_to(jugador.position) * speed
-		
-		# ← INVERSO: Mira DONDE VIENE Sonic (NO donde va)
-		var direccion_x = jugador.position.x - position.x  # Posición ABSOLUTA
-		$ani_mosca.flip_h = direccion_x > 0  # ← AL REVÉS de antes
-		
+		var direccion_x = jugador.position.x - position.x  
+		$ani_mosca.flip_h = direccion_x > 0  
 		move_and_slide()
 
 func _on_tiempo_timeout():

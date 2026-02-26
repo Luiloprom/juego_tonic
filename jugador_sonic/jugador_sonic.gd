@@ -10,12 +10,13 @@ extends CharacterBody2D
 @export var air_acceleration = 2000
 @export var air_friction = 700
 
+@export var vidas = 3
+
+@export var total_monedas: int = 40
+
 var ball = false
 var monedas: int = 0
-
-var vidas = 3
 var posicion_inicio = Vector2(40, 495)
-@export var total_monedas: int = 40
 
 # @onready LOCALES solamente
 @onready var ani_sonic = $ani_sonic
@@ -23,7 +24,6 @@ var posicion_inicio = Vector2(40, 495)
 @onready var contador_vidas: Control = $CanvasLayer/contador_vidas
 
 func _ready() -> void:
-	# Reset completo al cargar escena
 	vidas = 3
 	monedas = 0
 	floor_snap_length = 4.0
@@ -31,9 +31,24 @@ func _ready() -> void:
 	contador.actualizar(0)
 	contador_vidas.actualizar(vidas)
 
+
+# ========== FUNCION PRINCIPAL ========== #
+func _physics_process(delta: float) -> void:
+	var input_axis = Input.get_axis("mover_izquierda","mover_derecha")
+	apply_gravity(delta)
+	handle_acceleration(input_axis, delta)
+	handle_roll(delta)
+	apply_friction(input_axis, delta)
+	handle_jump()
+	handle_air_acceleration(input_axis, delta)
+	set_floor_max_angle(deg_to_rad(60))
+	move_and_slide()
+	update_animation(input_axis)
+
+
 func apply_gravity(delta):
 	if not is_on_floor():
-		velocity.y += 980.0 * delta * gravity_scale
+		velocity += get_gravity() * delta * gravity_scale
 
 func handle_acceleration(input_axis, delta):
 	if ball: return
@@ -59,20 +74,32 @@ func handle_air_acceleration(input_axis, delta):
 	if input_axis != 0:
 		velocity.x = speed * input_axis
 
-func handle_roll(input_axis, delta):
+# ========== SISTEMA DE BOLA ========== #
+func handle_roll(delta):
 	if not ball:
-		if is_on_floor() and Input.is_action_just_pressed("rodar") and abs(velocity.x) > 50:
+		try_entrar_bola()
+		return
+	
+	fisicas_bola_suelo(delta)
+	try_salir_bola()
+
+func try_entrar_bola():
+	if is_on_floor() and Input.is_action_just_pressed("rodar") and abs(velocity.x) > 50:
 			ball = true
 			velocity.x += sign(velocity.x) * boost
-		return
 
-	if Input.is_action_just_pressed("rodar"):
+func try_salir_bola():
+	if Input.is_action_just_pressed("rodar") or abs(velocity.x) < 30:
 		ball = false
-		return
 
+func fisicas_bola_suelo(delta):
 	if is_on_floor():
 		var floor_normal = get_floor_normal()
-		if abs(floor_normal.x) > 0.1:
+		pendientes_bola(floor_normal, delta)
+		friccion_bola(floor_normal, delta)
+
+func pendientes_bola(floor_normal, delta):
+	if abs(floor_normal.x) > 0.1:
 			var slope_force = (1.0 - floor_normal.y) * sign(floor_normal.x)
 			if sign(velocity.x) == sign(-floor_normal.x):
 				slope_force *= 1
@@ -80,14 +107,14 @@ func handle_roll(input_axis, delta):
 				slope_force *= 2.5
 			velocity.x += slope_force * 300 * delta
 
-		if floor_normal.y > 0.9:
-			velocity.x = move_toward(velocity.x, 0, friction * 1 * delta)
-		else:
-			velocity.x = move_toward(velocity.x, 0, friction * 0.3 * delta)
+func friccion_bola(floor_normal, delta):
+	if floor_normal.y > 0.9:
+		velocity.x = move_toward(velocity.x, 0, friction * 1 * delta)
+	else:
+		velocity.x = move_toward(velocity.x, 0, friction * 0.3 * delta)
 
-	if abs(velocity.x) < 30:
-		ball = false
 
+# ========== FUNCION DE ANIMACIONES ========== #
 func update_animation(input_axis):
 	if ball:
 		ani_sonic.play("rodar")
@@ -106,43 +133,33 @@ func update_animation(input_axis):
 	else:
 		ani_sonic.play("reposo")
 
-func _physics_process(delta: float) -> void:
-	var input_axis = Input.get_axis("mover_izquierda","mover_derecha")
-	apply_gravity(delta)
-	handle_acceleration(input_axis, delta)
-	handle_roll(input_axis, delta)
-	apply_friction(input_axis, delta)
-	handle_jump()
-	handle_air_acceleration(input_axis, delta)
-	set_floor_max_angle(deg_to_rad(60))
-	move_and_slide()
-	update_animation(input_axis)
 
 # ========== SISTEMA DE MUERTE/RESPAWN ========== #
 func morir():
-	activarFisicas(false)
+	activar_fisicas(false)
 	vidas -= 1
 	contador_vidas.actualizar(vidas)
 	ani_sonic.play("morir")
-	esperarTiempo()
-	morirCompleto()
+	await esperar_tiempo()
+	morir_completo()
 
-func morirCompleto():
+func morir_completo():
 	if vidas <= 0:
 		get_tree().change_scene_to_file("res://menu_muerte/menu_muerte.tscn")
 	else:
 		respawnear()
-		activarFisicas(true)
+		activar_fisicas(true)
 
-func activarFisicas(opcion: bool):
+func activar_fisicas(opcion: bool):
 	set_physics_process(opcion)
 	get_tree().call_group("enemigos", "set_physics_process", opcion)
 
 func respawnear():
-	global_position = Vector2(40, 495)
+	global_position = posicion_inicio
 	velocity = Vector2.ZERO
 	ball = false
 	ani_sonic.play("reposo")
+
 
 # ========== MONEDAS ========== #
 func add_moneda():
@@ -153,6 +170,7 @@ func add_moneda():
 	if monedas >= total_monedas:
 		victoria()
 
+
 # ========== VIDAS EXTRA ==========
 func add_vida():
 	if vidas < 5:
@@ -160,16 +178,17 @@ func add_vida():
 		$audio_moneda.play()
 	contador_vidas.actualizar(vidas)
 
+
 # ========== VICTORIA ==========
 func victoria():
 	$audio_victoria.play()
-	velocity = Vector2.ZERO
-	set_physics_process(false)
+	activar_fisicas(false)
 	ani_sonic.play("victoria")
-	esperarTiempo()
+	await esperar_tiempo()
 	get_tree().change_scene_to_file("res://menu/menu.tscn")
 
+
 # ========== TIEMPO ==========
-func esperarTiempo():
+func esperar_tiempo():
 	$tiempo.start()
 	await $tiempo.timeout
