@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://dtl4uq301ek82"]
+
+[ext_resource type="Texture2D" uid="uid://ditj75sqkyn01" path="res://tiles/img/1.png" id="1_0onu5"]
+[ext_resource type="Script" uid="uid://ikdq525jing5" path="res://tiles/tiles.gd" id="1_iqkpl"]
+[ext_resource type="Texture2D" uid="uid://bxeun440d7b6c" path="res://tiles/img/2.png" id="2_iqkpl"]
+[ext_resource type="Texture2D" uid="uid://b7221s0c63swo" path="res://tiles/img/3.png" id="3_jxjqf"]
+[ext_resource type="Texture2D" uid="uid://dtoiuow8y1h55" path="res://tiles/img/4.png" id="4_ypkbr"]
+[ext_resource type="Texture2D" uid="uid://1lvtoa1f43h4" path="res://tiles/img/5.png" id="5_ituqt"]
+[ext_resource type="Texture2D" uid="uid://bxcn8e2srax3h" path="res://tiles/img/6.png" id="6_lvpgx"]
+[ext_resource type="Texture2D" uid="uid://mi4unlf4twxq" path="res://tiles/img/7.png" id="7_2prgk"]
+[ext_resource type="Texture2D" uid="uid://crsqi3jtmm2x6" path="res://tiles/img/8.png" id="8_xrrrk"]
+[ext_resource type="Texture2D" uid="uid://b2nfx5dbfwvhx" path="res://tiles/img/9.png" id="9_oxarv"]
+[ext_resource type="Texture2D" uid="uid://bhkg3q5lsguls" path="res://tiles/img/10.png" id="10_nunpn"]
+[ext_resource type="Texture2D" uid="uid://cln5xcbq1v0gn" path="res://tiles/img/jaula.png" id="11_ndsly"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gkdpu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_0onu5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_iqkpl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jxjqf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ypkbr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ituqt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_lvpgx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_2prgk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_xrrrk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_oxarv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_nunpn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Tiles" type="Node2D" unique_id=455628154]
+script = ExtResource("1_iqkpl")
+
+[node name="ani_tiles" type="AnimatedSprite2D" parent="." unique_id=1716344280]
+sprite_frames = SubResource("SpriteFrames_gkdpu")
+frame_progress = 0.3289935
+
+[node name="celda_tiles" type="Sprite2D" parent="." unique_id=2017390515]
+position = Vector2(5.249999, -2.4999976)
+scale = Vector2(0.15136719, 0.14648436)
+texture = ExtResource("11_ndsly")

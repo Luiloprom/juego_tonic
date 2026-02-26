@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://jehm2kuh7kjt" path="res://coleccionables/moneda/moneda.tscn" id="5_x2wa3"]
 [ext_resource type="PackedScene" uid="uid://d0c0tqhjruvpy" path="res://entorno/fondo/fondo.tscn" id="6_ehb6n"]
 [ext_resource type="PackedScene" uid="uid://bvh26pre4xciu" path="res://coleccionables/vidas/vidas.tscn" id="7_vh8kr"]
+[ext_resource type="PackedScene" uid="uid://dtl4uq301ek82" path="res://tiles/tiles.tscn" id="8_ebjdp"]
 
 [node name="Environment" type="Node2D" unique_id=476322563]
 
@@ -15,7 +16,7 @@
 [node name="fondo" parent="." unique_id=1589648832 instance=ExtResource("6_ehb6n")]
 
 [node name="jugador_sonic" parent="." unique_id=1633354352 instance=ExtResource("2_wjl7u")]
-position = Vector2(25, 498)
+position = Vector2(4752, 528)
 boost = 400.0
 
 [node name="monedas" type="Node2D" parent="." unique_id=1587911331]
@@ -217,3 +218,6 @@ position = Vector2(3846, 238)
 
 [node name="vida2" parent="vidas" unique_id=1706206688 instance=ExtResource("7_vh8kr")]
 position = Vector2(2228, 485)
+
+[node name="Tiles" parent="." unique_id=455628154 instance=ExtResource("8_ebjdp")]
+position = Vector2(4885, 516)

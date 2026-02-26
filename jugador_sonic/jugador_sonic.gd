@@ -182,6 +182,8 @@ func add_vida():
 # ========== VICTORIA ==========
 func victoria():
 	$audio_victoria.play()
+	var personaje = get_tree().get_first_node_in_group("tiles")
+	personaje.liberar()
 	activar_fisicas(false)
 	ani_sonic.play("victoria")
 	await esperar_tiempo()
