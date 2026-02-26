@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://cqqn6ru8gqcrh"]
+
+[ext_resource type="Script" uid="uid://xye30cv37e4" path="res://entorno/contador_vidas/contador_vidas.gd" id="1_32g7l"]
+[ext_resource type="FontFile" uid="uid://jxwm8qd4g5nf" path="res://menus/menu/NiseSegaSonic.TTF" id="1_cslem"]
+[ext_resource type="Texture2D" uid="uid://b41c7w4ic5m8t" path="res://coleccionables/vidas/img/1.png" id="2_32g7l"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_215n7"]
+font = ExtResource("1_cslem")
+font_size = 27
+
+[node name="contador_vidas" type="Control" unique_id=1174036478]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_32g7l")
+
+[node name="hbox" type="HBoxContainer" parent="." unique_id=139651807]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 45.0
+offset_right = 69.0
+offset_bottom = 85.0
+
+[node name="lbl_contador_vidas" type="Label" parent="hbox" unique_id=91215743]
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_215n7")
+
+[node name="spr_contador_vidas" type="Sprite2D" parent="hbox" unique_id=823389214]
+position = Vector2(-20, 18)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_32g7l")

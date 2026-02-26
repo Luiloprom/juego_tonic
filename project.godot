@@ -22,12 +22,16 @@ Global="*uid://crtrrj01x86yu"
 [file_customization]
 
 folder_colors={
-"res://ene_mosca/": "red",
-"res://ene_mregg/": "red",
-"res://environment/": "blue",
+"res://coleccionables/": "yellow",
+"res://enemigos/": "red",
+"res://enemigos/ene_mosca/": "red",
+"res://enemigos/ene_mregg/": "red",
+"res://enemigos/pinchos/": "red",
+"res://entorno/": "teal",
+"res://entorno/environment/": "blue",
 "res://jugador_sonic/": "green",
-"res://menu/": "blue",
-"res://pinchos/": "red"
+"res://menus/": "blue",
+"res://menus/menu/": "blue"
 }
 
 [input]

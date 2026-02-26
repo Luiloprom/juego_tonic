@@ -145,7 +145,7 @@ func morir():
 
 func morir_completo():
 	if vidas <= 0:
-		get_tree().change_scene_to_file("res://menu_muerte/menu_muerte.tscn")
+		get_tree().change_scene_to_file("res://menus/menu_muerte/menu_muerte.tscn")
 	else:
 		respawnear()
 		activar_fisicas(true)
@@ -185,7 +185,7 @@ func victoria():
 	activar_fisicas(false)
 	ani_sonic.play("victoria")
 	await esperar_tiempo()
-	get_tree().change_scene_to_file("res://menu/menu.tscn")
+	get_tree().change_scene_to_file("res://menus/menu/menu.tscn")
 
 
 # ========== TIEMPO ==========

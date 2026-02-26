@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://bsa54i8upmdpg"]
+
+[ext_resource type="Script" uid="uid://cj764xdo80uld" path="res://menus/menu/menu.gd" id="1_6nwqt"]
+[ext_resource type="AudioStream" uid="uid://b35a2805c2xbu" path="res://menus/menu/sonic.mp3" id="1_g18jx"]
+[ext_resource type="Texture2D" uid="uid://cr5mwpod4u1we" path="res://menus/menu/fondoSonic.png" id="2_6nwqt"]
+[ext_resource type="FontFile" uid="uid://jxwm8qd4g5nf" path="res://menus/menu/NiseSegaSonic.TTF" id="4_pbjm4"]
+
+[sub_resource type="SystemFont" id="SystemFont_pbjm4"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_svuvw"]
+font = SubResource("SystemFont_pbjm4")
+font_size = 19
+
+[sub_resource type="LabelSettings" id="LabelSettings_juveg"]
+font = ExtResource("4_pbjm4")
+font_size = 63
+outline_size = 19
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Menu" type="Control" unique_id=2069662471]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_6nwqt")
+
+[node name="audio_menu" type="AudioStreamPlayer2D" parent="." unique_id=985547999]
+stream = ExtResource("1_g18jx")
+autoplay = true
+parameters/looping = false
+
+[node name="img_menu" type="Sprite2D" parent="." unique_id=1990407673]
+position = Vector2(5.9604645e-08, 3.8146973e-06)
+scale = Vector2(1.28, 1.2781065)
+texture = ExtResource("2_6nwqt")
+centered = false
+
+[node name="vbox_menu" type="VBoxContainer" parent="." unique_id=1269507824]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 494.0
+offset_right = 288.0
+offset_bottom = 605.0
+
+[node name="lbl_opciones" type="Label" parent="vbox_menu" unique_id=462003212]
+layout_mode = 2
+text = "Opciones :"
+label_settings = SubResource("LabelSettings_svuvw")
+
+[node name="btn_start" type="Button" parent="vbox_menu" unique_id=1083471978]
+layout_mode = 2
+text = "Empezar"
+
+[node name="btn_exit" type="Button" parent="vbox_menu" unique_id=380142433]
+layout_mode = 2
+text = "Salir"
+
+[node name="lbl_sonic" type="Label" parent="." unique_id=528092447]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 15.0
+offset_right = 262.0
+offset_bottom = 79.0
+text = "TONYC"
+label_settings = SubResource("LabelSettings_juveg")
+
+[connection signal="pressed" from="vbox_menu/btn_start" to="." method="_on_btn_start_pressed"]
+[connection signal="pressed" from="vbox_menu/btn_exit" to="." method="_on_btn_end_pressed"]
