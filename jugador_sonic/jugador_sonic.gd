@@ -12,6 +12,9 @@ extends CharacterBody2D
 
 var ball = false
 var monedas: int = 0
+
+var vidas = 3
+var posicion_inicio = Vector2(40, 495)
 @export var total_monedas: int = 40
 
 # @onready LOCALES solamente
@@ -21,12 +24,12 @@ var monedas: int = 0
 
 func _ready() -> void:
 	# Reset completo al cargar escena
-	Global.vidas = 3
+	vidas = 3
 	monedas = 0
 	floor_snap_length = 4.0
 	add_to_group("jugadores")
 	contador.actualizar(0)
-	contador_vidas.actualizar(Global.vidas)
+	contador_vidas.actualizar(vidas)
 
 func apply_gravity(delta):
 	if not is_on_floor():
@@ -115,31 +118,33 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	update_animation(input_axis)
 
-# ========== SISTEMA DE MUERTE/RESPAWN ==========
+# ========== SISTEMA DE MUERTE/RESPAWN ========== #
 func morir():
-	if ball: return
-	
-	get_tree().call_group("enemigos", "set_physics_process", false)
-	set_physics_process(false)
-	
-	Global.vidas -= 1
-	contador_vidas.actualizar(Global.vidas)
-	
+	activarFisicas(false)
+	vidas -= 1
+	contador_vidas.actualizar(vidas)
 	ani_sonic.play("morir")
 	$tiempo.start()
 	await $tiempo.timeout
+	morirCompleto()
 	
-	if Global.vidas <= 0:
+	
+
+func morirCompleto():
+	if vidas <= 0:
 		get_tree().change_scene_to_file("res://menu_muerte/menu_muerte.tscn")
 	else:
 		global_position = Vector2(40, 495)
 		velocity = Vector2.ZERO
 		ball = false
 		ani_sonic.play("reposo")
-		set_physics_process(true)
-		get_tree().call_group("enemigos", "set_physics_process", true)
+		activarFisicas(true)
 
-# ========== MONEDAS ==========
+func activarFisicas(opcion: bool):
+	set_physics_process(opcion)
+	get_tree().call_group("enemigos", "set_physics_process", opcion)
+
+# ========== MONEDAS ========== #
 func add_moneda():
 	$audio_moneda.play()
 	monedas += 1
@@ -150,10 +155,10 @@ func add_moneda():
 
 # ========== VIDAS EXTRA ==========
 func add_vida():
-	if Global.vidas < 5:
-		Global.vidas += 1
+	if vidas < 5:
+		vidas += 1
 		$audio_moneda.play()
-	contador_vidas.actualizar(Global.vidas)
+	contador_vidas.actualizar(vidas)
 
 # ========== VICTORIA ==========
 func victoria():

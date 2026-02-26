@@ -17,6 +17,8 @@ func _on_ene_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("jugadores"):
 		body.morir()
 		set_physics_process(false)
+	elif body.is_in_group("enemigos"):
+		dar_vuelta()
 
 func lanzar_mosca():
 	if ene_mosca_scene:
